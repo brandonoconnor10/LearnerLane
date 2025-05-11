@@ -7,3 +7,5 @@
     6. Add project folders and files
     7. Set up project structure
     8. Set up Airtable base
+    9. Defined K53_Content table with fields: section. content, image, type, answer, options
+    10. 
