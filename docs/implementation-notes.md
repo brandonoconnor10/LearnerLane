@@ -8,4 +8,6 @@
     7. Set up project structure
     8. Set up Airtable base
     9. Defined K53_Content table with fields: section. content, image, type, answer, options
-    10. 
+    10. Entered all data related to each field including images
+    11. Retrieved Airtable API key and base ID, stored in .env file
+    12.
