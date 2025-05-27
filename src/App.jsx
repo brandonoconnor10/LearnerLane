@@ -1,9 +1,13 @@
+import { useEffect } from "react"
+import { fetchData } from "./data/fetchData"
 
 
 const App = () => {
+
+  useEffect(() => {fetchData('section', 'Introduction').then(data => console.log(data))}, [])  
   return (
     <div>
-      <h1>LearnerLane</h1>
+      
     </div>
   )
 }
