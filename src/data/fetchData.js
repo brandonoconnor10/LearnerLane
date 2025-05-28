@@ -2,7 +2,13 @@
 const API_KEY = import.meta.env.VITE_AIRTABLE_API_KEY;
 const BASE_ID = import.meta.env.VITE_AIRTABLE_BASE_ID;
 
-export const fetchData = async (filterField1 = '', filterValue1 = '', filterField2 = '', filterValue2 = '', maxRecords = 100) => {
+export const fetchData = async (
+    filterField1 = '', 
+    filterValue1 = '', 
+    filterField2 = '', 
+    filterValue2 = '', 
+    maxRecords = 100
+) => {
   try {
     if (!API_KEY || !BASE_ID) {
       throw new Error('Airtable API key or Base ID is missing in .env');
@@ -12,10 +18,11 @@ export const fetchData = async (filterField1 = '', filterValue1 = '', filterFiel
     let formula = '';
 
     if (filterField1 && filterValue1) {
-      formula = `{${filterField1}}='${encodeURIComponent(filterValue1)}'`;
+      formula += `{${filterField1}}='${filterValue1}'`;
     }
+
     if (filterField2 && filterValue2) {
-      formula += formula ? ` AND {${filterField2}}='${encodeURIComponent(filterValue2)}'` : `{${filterField2}}='${encodeURIComponent(filterValue2)}'`;
+      formula += formula ? ` AND {${filterField2}}='${filterValue2}'` : `{${filterField2}}='${filterValue2}'`;
     }
 
     if (formula) {
