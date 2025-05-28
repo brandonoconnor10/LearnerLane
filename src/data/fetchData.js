@@ -17,17 +17,17 @@ export const fetchData = async (
     let formula = '';
 
     if (filterField1 && filterValue1) {
-      formula += `{${filterField1}}='${filterValue1}'`;
+      formula += `FIND('${filterValue1}', {${filterField1}}) > 0`;
     }
 
     if (filterField2 && filterValue2) {
       formula += formula
-        ? ` AND {${filterField2}}='${filterValue2}'`
-        : `{${filterField2}}='${filterValue2}'`;
+        ? ` AND FIND('${filterValue2}', {${filterField2}}) > 0`
+        : `FIND('${filterValue2}', {${filterField2}}) > 0`;
     }
 
     if (formula) {
-      url += `&filterByFormula=${encodeURIComponent(`(${formula})`)}`; 
+      url += `&filterByFormula=${encodeURIComponent(`(${formula})`)}`;
     }
 
     console.log('Fetching URL:', url);
