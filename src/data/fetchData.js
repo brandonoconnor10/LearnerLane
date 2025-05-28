@@ -1,13 +1,12 @@
-// src/data/fetchData.js
 const API_KEY = import.meta.env.VITE_AIRTABLE_API_KEY;
 const BASE_ID = import.meta.env.VITE_AIRTABLE_BASE_ID;
 
 export const fetchData = async (
-    filterField1 = '', 
-    filterValue1 = '', 
-    filterField2 = '', 
-    filterValue2 = '', 
-    maxRecords = 100
+  filterField1 = '',
+  filterValue1 = '',
+  filterField2 = '',
+  filterValue2 = '',
+  maxRecords = 100
 ) => {
   try {
     if (!API_KEY || !BASE_ID) {
@@ -22,14 +21,16 @@ export const fetchData = async (
     }
 
     if (filterField2 && filterValue2) {
-      formula += formula ? ` AND {${filterField2}}='${filterValue2}'` : `{${filterField2}}='${filterValue2}'`;
+      formula += formula
+        ? ` AND {${filterField2}}='${filterValue2}'`
+        : `{${filterField2}}='${filterValue2}'`;
     }
 
     if (formula) {
-      url += `&filterByFormula=${encodeURIComponent(formula)}`;
+      url += `&filterByFormula=${encodeURIComponent(`(${formula})`)}`; 
     }
 
-    console.log('Fetching URL: ', url)
+    console.log('Fetching URL:', url);
 
     const response = await fetch(url, {
       headers: {
@@ -39,10 +40,12 @@ export const fetchData = async (
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      const errorData = await response.json();
+      throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorData.error?.message || 'Unknown error'}`);
     }
 
     const data = await response.json();
+    console.log('Fetched data:', data);
     return data.records || [];
   } catch (error) {
     console.error('Error fetching Airtable data:', error);
