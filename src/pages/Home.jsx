@@ -6,7 +6,7 @@ const Home = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchData('Section', 'Introduction', 'Subsection', 'K53 Explained')
+    fetchData('Section', 'Introduction', 'Subsection', 'K53 Explained', 100, ['Section', 'Subsection', 'Content'])
       .then(data => {
         if (data.length > 0) {
           setIntroContent(data[0].fields);

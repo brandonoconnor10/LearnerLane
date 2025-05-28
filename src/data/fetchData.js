@@ -6,37 +6,42 @@ export const fetchData = async (
   filterValue1 = '',
   filterField2 = '',
   filterValue2 = '',
-  maxRecords = 100
+  maxRecords = 100,
+  fields = []
 ) => {
   try {
     if (!API_KEY || !BASE_ID) {
       throw new Error('Airtable API key or Base ID is missing in .env');
     }
 
-    let url = `https://api.airtable.com/v0/${BASE_ID}/K53_Content?maxRecords=${maxRecords}`;
     let formula = '';
-
     if (filterField1 && filterValue1) {
       formula += `FIND('${filterValue1}', {${filterField1}}) > 0`;
     }
-
     if (filterField2 && filterValue2) {
       formula += formula
         ? ` AND FIND('${filterValue2}', {${filterField2}}) > 0`
         : `FIND('${filterValue2}', {${filterField2}}) > 0`;
     }
 
+    const requestBody = {
+      maxRecords,
+      fields,
+    };
+
     if (formula) {
-      url += `&filterByFormula=${encodeURIComponent(`(${formula})`)}`;
+      requestBody.filterByFormula = formula;
     }
 
-    console.log('Fetching URL:', url);
+    console.log('Request Body:', requestBody);
 
-    const response = await fetch(url, {
+    const response = await fetch(`https://api.airtable.com/v0/${BASE_ID}/K53_Content/listRecords`, {
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${API_KEY}`,
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify(requestBody),
     });
 
     if (!response.ok) {
