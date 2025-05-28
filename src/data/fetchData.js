@@ -2,7 +2,7 @@ const API_KEY = import.meta.env.VITE_AIRTABLE_API_KEY;
 const BASE_ID = import.meta.env.VITE_AIRTABLE_BASE_ID;
 
 
-export const fetchData = async (filterField = '', filterValue = '',maxRecords = 100) => {
+export const fetchData = async (filterField1 = '', filterField2 = '',filterValue1 = '', filterValue2 = '', maxRecords = 100) => {
     
     try {
         if(!API_KEY || !BASE_ID){
@@ -10,9 +10,18 @@ export const fetchData = async (filterField = '', filterValue = '',maxRecords = 
         }
 
         let url = `https://api.airtable.com/v0/${BASE_ID}/K53_Content?maxRecords=${maxRecords}`
+        let formula = '';
 
-        if(filterField && filterValue){
-            url += `&filterByFormula={${filterField}}='${filterValue}'`;
+
+        if(filterField1 && filterValue1){
+            formula = `{${filterField1}}='${encodeURIComponent(filterValue1)}'`
+        }
+        if(filterField2 && filterValue2){
+            formula += (formula ? 'AND' : '') + `{${filterField2}='${encodeURIComponent(filterValue2)}}'`
+        }
+
+        if(formula){
+            url += `&filterByFormula={${encodeURIComponent(formula)}'`;
         }
 
         const response = await fetch(url, {
