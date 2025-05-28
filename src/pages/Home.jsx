@@ -19,8 +19,8 @@ const Home = () => {
       <div>Welcome to Learner Lane</div>
       {introContent ? (
         <div>
-          <h2>{introContent.Subsection}</h2>
-          <p>{introContent.Content}</p>
+          <h2>{introContent.subsection}</h2>
+          <p>{introContent.content}</p>
         </div>
     ) : (
         <p>Loading...</p>
