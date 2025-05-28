@@ -8,6 +8,8 @@ const Home = () => {
     fetchData('Section', 'Introduction', 'Subsection', 'K53 Explained').then(data => {
       if(data.length > 0){
         setIntroContent( data[0].fields)
+      } else {
+        console.log('No matching data found: ', data)
       }
     })
   }, [])
