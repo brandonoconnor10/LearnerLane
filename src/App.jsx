@@ -1,13 +1,14 @@
 import { useEffect } from "react"
 import { fetchData } from "./data/fetchData"
+import Home from './pages/Home'
 
 
 const App = () => {
 
-  useEffect(() => {fetchData('section', 'Introduction').then(data => console.log(data))}, [])  
+  useEffect(() => {fetchData().then(data => console.log('App received: ',data))}, [])  
   return (
     <div>
-      
+      <Home />
     </div>
   )
 }
