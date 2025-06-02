@@ -31,7 +31,7 @@ const Home = () => {
 
         {/* Header */}
         <div className='text-center'>
-          <h1 className='text-4xl font-bold mb-2'>Learner Lane</h1>
+          <h1 className='text-4xl font-bold mb-2 '>Learner Lane</h1>
           <h2 className='text-2xl font-semibold text-grey-400'>K53 Explained</h2>
         </div>
 

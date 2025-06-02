@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Router>
       <div className='min-h-screen bg-gray-900 text-white'>
-        {/* Nvigation Bar */}
+        {/* Navigation Bar */}
 
         <nav className='bg-gray-800 p-4'>
           <ul className='flex space-x-4 justify-center'>
