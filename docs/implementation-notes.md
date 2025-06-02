@@ -11,4 +11,5 @@
     10. Entered all data related to each field including images
     11. Retrieved Airtable API key and base ID, stored in .env file
     12. Set up fetchData js to fetch our Airtable data 
-    13. 
+    13. Implement React Router 
+    14.
