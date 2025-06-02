@@ -25,19 +25,18 @@ const Home = () => {
   }, [])
 
   return (
-    <>
-      <div>Welcome to Learner Lane</div>
-       {error ? (
-        <p>{error}</p>
-       ) : introContent ? (
-        <div>
-          <h2>{introContent.Subsection}</h2>
-          <p>{introContent.Content}</p>
-        </div>
-       ) : (
-        <p>Loading...</p>
-       )}
-    </>
+    
+      <div key = {error || introContent ? 'loaded' : 'loading'}>
+        <h1>Welcome to Learner Lane</h1>
+        {error && <p> {error}</p>}
+        {introContent && (
+          <div>
+            <h2>{introContent.Subsection}</h2>
+            <p>{introContent.Content}</p>
+          </div>
+        )}
+        {!error && !introContent && <p>Loading...</p>}
+    </div>
   );
 }
 
