@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
 
-const Home = () => {
+const GettingStarted = () => {
   const [introContent, setIntroContent] = useState(null);
   const [error, setError] = useState(null);
   
 
   useEffect(() => {
-    fetchData('Section', 'Introduction', 'Subsection', 'K53 Explained')
+    fetchData('Section', 'Introduction', 'Subsection', 'Getting Started')
     .then(data => {
       console.log('Data received in Home: ' , data)
       if(data.length > 0){
@@ -53,4 +53,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default GettingStarted;
