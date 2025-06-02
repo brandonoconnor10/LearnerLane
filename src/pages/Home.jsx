@@ -49,6 +49,7 @@ const Home = () => {
         )}
         {!error && !introContent && <p className='mt-4'>Loading...</p>}
         <footer className='mt-8 text-sm text-gray-500'>© 2025 Learner Lane. All right reserved.</footer>
+        
     </div>
   );
 }

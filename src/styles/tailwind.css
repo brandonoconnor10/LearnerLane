@@ -8,4 +8,11 @@
     --font-orbitron: Orbitron, sans-serif;
     --font-inter: Inter, san-serif;
     --font-rajdhani: Rajdhani, sans-serif;
+
+    --color-navy-dark: #0a0f1a;
+    --color-white: #ffffff;
+    --color-gray-light: #b0b8c1;
+    --color-gray-dark: #111827;
+    --color-cyan: #00ffff;
+    --color-cyan-light: #00e6e6;
 }
