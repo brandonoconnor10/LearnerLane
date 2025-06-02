@@ -19,6 +19,8 @@ export const fetchData = async (filterField1 = '', filterValue1 = '', filterFiel
             formula = `AND({${filterField1}}='${filterValue1}', {${filterField2}}='${filterValue2}')`;
           }
           params.filterByFormula = formula;
+          params.fields = ['Section', 'Subsection', 'Content', 'Type']
+          
           console.log('Generated formula: ', formula)
         }
 
