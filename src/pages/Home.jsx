@@ -26,14 +26,26 @@ const Home = () => {
 
   return (
     
-      <div key = {error || introContent ? 'loaded' : 'loading'}>
-        <h1>Welcome to Learner Lane</h1>
-        {error && <p> {error}</p>}
+      <div key = {error || introContent ? 'loaded' : 'loading'} 
+      className='min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4'>
+
+        {/* Header */}
+        <div className='text-center'>
+          <h1 className='text-4xl font-bold mb-2'>Learner Lane</h1>
+          <h2 className='text-2xl font-semibold text-grey-400'>{introContent.Subsection}</h2>
+        </div>
+
+        {/* Content or Error/Loading */}
+        {error && <p className='text-red-400 mt-4'> {error}</p>}
         {introContent && (
-          <div>
-            <h2>{introContent.Subsection}</h2>
-            <p>{introContent.Content}</p>
+        <div className='mt-6 w-full max-w-md'>
+          <div className='bg-gray-800 p-4 border-2 border-cyan-500 rounded-lg text-center'>
+            <p className='text-gray-300'>{introContent.Content}</p>
           </div>
+          <div className='mt-4 flex justify-center'>
+            <button className='bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded'>Take Quiz</button>
+          </div>
+        </div>
         )}
         {!error && !introContent && <p>Loading...</p>}
     </div>
