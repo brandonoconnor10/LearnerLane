@@ -1,6 +1,6 @@
 import Title from  '../components/Title'
 import Subtitle from '../components/Subtitle'
-import Roadmap from '../components/Roadmap'
+import Roadmap from '../components/RoadMap'
 import Footer from '../components/Footer'
 
 const HomePage = () => {
