@@ -5,7 +5,8 @@ import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 
 const K53ExplainedQuizPage = () => {
-  const { content, options, answer, loading, error } = useQuizData('Revision Test', 'Introduction to K53');
+  const { questions, loading, error } = useQuizData('Revision Test', 'Introduction to K53');
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const navigate = useNavigate();
 
@@ -16,17 +17,21 @@ const K53ExplainedQuizPage = () => {
     </div>
   );
 
+  const currentQuestion = questions[currentIndex];
+  const { content, options, answer } = currentQuestion;
+
   const handleOptionClick = (option, index) => {
     setSelectedOption(index);
-    if (option === answer) {
-      // No feedback text, button will handle navigation
-    } else {
-      setSelectedOption(index); // Keep the selection for red background
-    }
+    console.log(`Option clicked: ${option}, Index: ${index}, Correct Answer: ${answer}`);
   };
 
-  const handleNextQuestion = () => {
-    navigate('/');
+  const handleNext = () => {
+    if (currentIndex < questions.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setSelectedOption(null); // Reset selection for the next question
+    } else {
+      navigate('/introduction');
+    }
   };
 
   return (
@@ -60,13 +65,13 @@ const K53ExplainedQuizPage = () => {
           ))}
         </div>
 
-        {/* Next Question Button (Only for Correct Answer) */}
+        {/* Next Question or Next Topic Button (Only for Correct Answer) */}
         {selectedOption !== null && options[selectedOption] === answer && (
           <button
-            onClick={handleNextQuestion}
+            onClick={handleNext}
             className="mt-12 px-6 py-3 bg-cyan text-white rounded-lg hover:bg-cyan-light transition-colors duration-200 text-lg font-inter"
           >
-            Next Question
+            {currentIndex < questions.length - 1 ? 'Next Question' : 'Next Topic'}
           </button>
         )}
       </VerticalLineContainer>
