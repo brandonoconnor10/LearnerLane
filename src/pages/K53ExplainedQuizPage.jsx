@@ -39,17 +39,18 @@ const K53ExplainedQuizPage = () => {
           {content || 'No question available.'}
         </div>
 
-        {/* Options Boxes */}
+        {/* Options Blocks in 2x2 Grid */}
         <div className="grid grid-cols-2 gap-4 mt-8 w-full max-w-2xl">
           {options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleOptionClick(option, index)}
-              className={`relative bg-gray-dark text-white p-4 border-2 border-cyan rounded-lg text-left text-lg font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 ${
+              className={`relative bg-gray-dark text-white p-4 border-2 border-cyan rounded-lg text-left text-lg font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[100px] flex items-center ${
                 selectedOption === index ? (feedback === 'Correct!' ? 'bg-green-500' : 'bg-red-500') : ''
               }`}
             >
-              {String.fromCharCode(97 + index)}) {option}
+              <span className="mr-2">{String.fromCharCode(97 + index)})</span>
+              <span className="leading-relaxed">{option}</span>
             </button>
           ))}
         </div>
