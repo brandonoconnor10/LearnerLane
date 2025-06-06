@@ -24,6 +24,12 @@ const K53ExplainedQuizPage = () => {
     }
   };
 
+  // Function to determine font size based on option length
+  const getFontSize = (option) => {
+    const lengthThreshold = 30; // Adjust this threshold as needed
+    return option.length < lengthThreshold ? 'text-lg' : 'text-base';
+  };
+
   return (
     <PageLayout
       subtitle={
@@ -45,12 +51,12 @@ const K53ExplainedQuizPage = () => {
             <button
               key={index}
               onClick={() => handleOptionClick(option, index)}
-              className={`relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg text-left text-base font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[120px] flex items-center ${
+              className={`relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg text-left font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[120px] flex items-center ${
                 selectedOption === index ? (feedback === 'Correct!' ? 'bg-green-500' : 'bg-red-500') : ''
               }`}
             >
               <span className="mr-2">{String.fromCharCode(97 + index)})</span>
-              <span className="leading-normal">{option}</span>
+              <span className={`leading-normal ${getFontSize(option)}`}>{option}</span>
             </button>
           ))}
         </div>
