@@ -15,12 +15,12 @@ export const useQuizData = (section, subsection) => {
           'Subsection',
           `"${subsection}"`,
           100,
-          ['Content', 'Options', 'Answer'] // Explicitly request these fields
+          ['Content', 'Options', 'Answer']
         );
         if (isMounted && result.length > 0) {
           const record = result[0];
           const content = record.fields?.Content || '';
-          const options = record.fields?.Options?.split('|') || [];
+          const options = record.fields?.Options?.split('.').map(opt => opt.trim()).filter(opt => opt) || [];
           const answer = record.fields?.Answer || '';
           setData({ content, options, answer, loading: false, error: null });
         } else if (isMounted) {
