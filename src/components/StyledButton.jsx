@@ -1,17 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const StyledButton = ({ children, to, asLink=false, ...props }) => {
-    const baseClasses = 'bg-gray-dark text-white font-rajdhani text-lg md: text-xl py-3 md:py-4 px-6 md:px-8 rounded-lg border-2 border-cyan hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 cursor-pointer text-center'
+const StyledButton = ({ children, to, asLink = false, variant = 'small', className = '', ...rest }) => {
+  const baseClasses = `bg-gray-dark text-white font-rajdhani rounded-lg border-2 border-cyan hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 cursor-pointer text-center ${
+    variant === 'large' ? 'text-lg md:text-xl py-4 md:py-5 px-8 md:px-10' : 'text-lg md:text-xl py-3 md:py-4 px-6 md:px-8'
+  } ${className}`;
+
   return asLink ? (
-    <Link to={to} className={baseClasses} {...props}>
-        {children}
+    <Link to={to} className={baseClasses} {...rest}>
+      {children}
     </Link>
   ) : (
-    <button className={baseClasses} {...props}>
-        {children}
+    <button className={baseClasses} {...rest}>
+      {children}
     </button>
-  )
-}
+  );
+};
 
-export default StyledButton
+export default StyledButton;
