@@ -33,24 +33,24 @@ const K53ExplainedQuizPage = () => {
       }
       contentClassName="justify-start"
     >
-      <VerticalLineContainer className="flex flex-col items-center mt-32 max-h-[70vh]">
+      <VerticalLineContainer className="flex flex-col items-center mt-32 max-h-[70vh] px-8">
         {/* Question Box */}
-        <div className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-2xl h-[100px] flex items-center justify-center text-center text-xl leading-relaxed font-rajdhani">
+        <div className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-3xl h-[100px] flex items-center justify-center text-center text-xl leading-relaxed font-rajdhani">
           {content || 'No question available.'}
         </div>
 
         {/* Options Blocks in 2x2 Grid */}
-        <div className="grid grid-cols-2 gap-4 mt-8 w-full max-w-2xl">
+        <div className="grid grid-cols-2 gap-6 mt-8 w-full max-w-3xl">
           {options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleOptionClick(option, index)}
-              className={`relative bg-gray-dark text-white p-4 border-2 border-cyan rounded-lg text-left text-lg font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[100px] flex items-center ${
+              className={`relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg text-left text-base font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[120px] flex items-center ${
                 selectedOption === index ? (feedback === 'Correct!' ? 'bg-green-500' : 'bg-red-500') : ''
               }`}
             >
               <span className="mr-2">{String.fromCharCode(97 + index)})</span>
-              <span className="leading-relaxed">{option}</span>
+              <span className="leading-normal">{option}</span>
             </button>
           ))}
         </div>
