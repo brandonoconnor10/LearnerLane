@@ -1,3 +1,4 @@
+// src/pages/IntroductionPage.jsx
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
@@ -24,7 +25,12 @@ function IntroductionPage() {
       <VerticalLineContainer className="mt-6">
         {sections.map((section, index) => (
           <div key={index} className="relative flex flex-col items-center z-10">
-            <StyledButton variant="large" className="my-6">
+            <StyledButton
+              to={`/${section.toLowerCase().replace(/\s+/g, '-')}`}
+              asLink
+              variant="large"
+              className="my-6"
+            >
               {section}
             </StyledButton>
             <QuizLink section={section} index={index} />
