@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useQuizData } from '../hooks/useQuizData';
+import { useNavigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 
 const K53ExplainedQuizPage = () => {
   const { content, options, answer, loading, error } = useQuizData('Revision Test', 'Introduction to K53');
   const [selectedOption, setSelectedOption] = useState(null);
-  const [feedback, setFeedback] = useState('');
+  const navigate = useNavigate();
 
   if (loading) return <div className="text-white">Loading...</div>;
   if (error) return (
@@ -18,16 +19,14 @@ const K53ExplainedQuizPage = () => {
   const handleOptionClick = (option, index) => {
     setSelectedOption(index);
     if (option === answer) {
-      setFeedback('Correct!');
+      // No feedback text, button will handle navigation
     } else {
-      setFeedback('Incorrect. Try again!');
+      setSelectedOption(index); // Keep the selection for red background
     }
   };
 
-  // Function to determine font size based on option length
-  const getFontSize = (option) => {
-    const lengthThreshold = 30; // Adjust this threshold as needed
-    return option.length < lengthThreshold ? 'text-lg' : 'text-base';
+  const handleNextQuestion = () => {
+    navigate('/');
   };
 
   return (
@@ -52,20 +51,23 @@ const K53ExplainedQuizPage = () => {
               key={index}
               onClick={() => handleOptionClick(option, index)}
               className={`relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg text-left font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[120px] flex items-center ${
-                selectedOption === index ? (feedback === 'Correct!' ? 'bg-green-500' : 'bg-red-500') : ''
+                selectedOption === index ? (option === answer ? 'bg-green-500' : 'bg-red-500') : ''
               }`}
             >
               <span className="mr-2">{String.fromCharCode(97 + index)})</span>
-              <span className={`leading-normal ${getFontSize(option)}`}>{option}</span>
+              <span className={`leading-normal ${option.length < 30 ? 'text-lg' : 'text-base'}`}>{option}</span>
             </button>
           ))}
         </div>
 
-        {/* Feedback */}
-        {feedback && (
-          <div className="mt-4 text-lg font-inter text-center">
-            {feedback}
-          </div>
+        {/* Next Question Button (Only for Correct Answer) */}
+        {selectedOption !== null && options[selectedOption] === answer && (
+          <button
+            onClick={handleNextQuestion}
+            className="mt-12 px-6 py-3 bg-cyan text-white rounded-lg hover:bg-cyan-light transition-colors duration-200 text-lg font-inter"
+          >
+            Next Question
+          </button>
         )}
       </VerticalLineContainer>
     </PageLayout>
