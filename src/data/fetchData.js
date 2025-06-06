@@ -13,9 +13,9 @@ export const fetchData = async (filterField1 = '', filterValue1 = '', filterFiel
     let params = { maxRecords };
 
     if (filterField1 && filterValue1) {
-      let formula = `{${filterField1}}='${filterValue1}'`;
+      let formula = `{${filterField1}}=${filterValue1}`; 
       if (filterField2 && filterValue2) {
-        formula = `AND({${filterField1}}='${filterValue1}', {${filterField2}}='${filterValue2}')`;
+        formula = `AND({${filterField1}}=${filterValue1}, {${filterField2}}=${filterValue2})`;
       }
       params.filterByFormula = formula;
       params.fields = ['Section', 'Subsection', 'Content', 'Type']; 
