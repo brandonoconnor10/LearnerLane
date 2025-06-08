@@ -9,6 +9,8 @@ import LearnersTestDetailsPage from './pages/LearnersTestDetailsPage';
 import LearnersTestDetailsQuizPage from './pages/LearnersTestDetailsQuizPage';
 import LearnersLicenceDisqualificationsPage from './pages/LearnersLicenceDisqualificationsPage';
 import LearnersLicenceDisqualificationsQuizPage from './pages/LearnersLicenceDisqualifcationsQuizPage';
+import BeforeYourTestPage from './pages/BeforeYourTestPage';
+import BeforeYourTestQuizPage from './pages/BeforeYourTestQuizPage';
 
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
           <Route path='/learners-test-details/quiz' element={<LearnersTestDetailsQuizPage />} />
           <Route path='/learners-licence-disqualifications' element={ <LearnersLicenceDisqualificationsPage />}/>
           <Route path='/learners-licence-disqualifications/quiz' element={<LearnersLicenceDisqualificationsQuizPage />}/>
+          <Route path='/before-your-test' element={ <BeforeYourTestPage />}/>
+          <Route path='/before-your-test/quiz' element={<BeforeYourTestQuizPage />}/>
         </Routes>
       </div>
     </Router>
