@@ -12,6 +12,7 @@ function RoadSignsPage() {
     "Guidance and Information Signs",
     "Traffic Signals",
     "Temporary Signs",
+    "Road Markers",
   ];
 
   return (
