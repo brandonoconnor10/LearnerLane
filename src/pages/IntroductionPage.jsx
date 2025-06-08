@@ -1,4 +1,4 @@
-// src/pages/IntroductionPage.jsx
+
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
