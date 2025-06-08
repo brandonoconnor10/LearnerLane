@@ -41,4 +41,4 @@ const K53ExplainedPage = () => {
   );
 };
 
-export default React.memo(K53ExplainedPage);
+export default K53ExplainedPage;
