@@ -6,6 +6,8 @@ import K53ExplainedQuizPage from './pages/K53ExplainedQuizPage';
 import GettingStartedPage from './pages/GettingStartedPage';
 import GettingStartedQuizPage from './pages/GettingStartedQuizPage';
 import LearnersTestDetailsPage from './pages/LearnersTestDetailsPage';
+import LearnersTestDetailsQuizPage from './pages/LearnersTestDetailsQuizPage';
+
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
           <Route path='/getting-started' element={ <GettingStartedPage />} />
           <Route path="/getting-started/quiz" element={<GettingStartedQuizPage />} />
           <Route path="/learners-test-details" element={<LearnersTestDetailsPage />} />
+          <Route path='/learners-test-details/quiz' element={<LearnersTestDetailsQuizPage />} />
         </Routes>
       </div>
     </Router>
