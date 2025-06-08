@@ -40,7 +40,7 @@ const LearnersTestDetailsPage = () => {
         </div>
 
         <StyledButton
-          to="/getting-started/quiz"
+          to="/learners-test-details/quiz"
           asLink
           variant="large"
           className="mt-32 mb-6"
