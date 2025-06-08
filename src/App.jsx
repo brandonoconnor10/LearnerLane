@@ -14,6 +14,10 @@ import BeforeYourTestQuizPage from './pages/BeforeYourTestQuizPage';
 import RoadSignsPage from './pages/RoadSignsPage';
 import RegulatorySignsPage from './pages/RegulatorySignsPage';
 import WarningSignsPage from './pages/WarningSignsPage';
+import GuidanceAndInfoSignsPage from './pages/GuidanceAndInfoSignsPage';
+import TrafficSignalsPage from './pages/TrafficSignalsPage';
+import TemporarySignsPage from './pages/TemporarySignsPage';
+import RoadMarkersPage from './pages/RoadMarkersPage';
 
 
 const App = () => {
@@ -26,6 +30,10 @@ const App = () => {
           <Route path='/road-signs' element={<RoadSignsPage />} />
           <Route path='/regulatory-signs' element={<RegulatorySignsPage />}/>
           <Route path='/warning-signs' element={<WarningSignsPage />}/>
+          <Route path='/guidance-and-information-signs' element={<GuidanceAndInfoSignsPage />}/>
+          <Route path='/traffic-signals' element={<TrafficSignalsPage />}/>
+          <Route path='/temporary-signs' element={<TemporarySignsPage />}/>
+          <Route path='/road-markers' element={<RoadMarkersPage />}/>
           <Route path="/k53-explained" element={<K53ExplainedPage />} />
           <Route path="/k53-explained/quiz" element={<K53ExplainedQuizPage />} />
           <Route path='/getting-started' element={ <GettingStartedPage />} />
