@@ -4,6 +4,10 @@ import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import QuizLink from '../components/QuizLink';
 
+const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
+
+
+
 function IntroductionPage() {
   const sections = [
     "K53 Explained",
@@ -26,7 +30,7 @@ function IntroductionPage() {
         {sections.map((section, index) => (
           <div key={index} className="relative flex flex-col items-center z-10">
             <StyledButton
-              to={`/${section.toLowerCase().replace(/\s+/g, '-')}`}
+              to={`/${slugify(section)}`}
               asLink
               variant="large"
               className="my-6"
