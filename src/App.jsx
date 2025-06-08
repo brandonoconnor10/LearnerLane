@@ -12,6 +12,7 @@ import LearnersLicenceDisqualificationsQuizPage from './pages/LearnersLicenceDis
 import BeforeYourTestPage from './pages/BeforeYourTestPage';
 import BeforeYourTestQuizPage from './pages/BeforeYourTestQuizPage';
 import RoadSignsPage from './pages/RoadSignsPage';
+import RegulatorySignsPage from './pages/RegulatorySignsPage';
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/introduction" element={<IntroductionPage />} />
           <Route path='/road-signs' element={<RoadSignsPage />} />
+          <Route path='/regulatory-signs' element={<RegulatorySignsPage />}/>
           <Route path="/k53-explained" element={<K53ExplainedPage />} />
           <Route path="/k53-explained/quiz" element={<K53ExplainedQuizPage />} />
           <Route path='/getting-started' element={ <GettingStartedPage />} />
