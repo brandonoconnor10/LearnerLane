@@ -7,6 +7,8 @@ import GettingStartedPage from './pages/GettingStartedPage';
 import GettingStartedQuizPage from './pages/GettingStartedQuizPage';
 import LearnersTestDetailsPage from './pages/LearnersTestDetailsPage';
 import LearnersTestDetailsQuizPage from './pages/LearnersTestDetailsQuizPage';
+import LearnersLicenceDisqualificationsPage from './pages/LearnersLicenceDisqualificationsPage';
+import LearnersLicenceDisqualificationsQuizPage from './pages/LearnersLicenceDisqualifcationsQuizPage';
 
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
           <Route path="/getting-started/quiz" element={<GettingStartedQuizPage />} />
           <Route path="/learners-test-details" element={<LearnersTestDetailsPage />} />
           <Route path='/learners-test-details/quiz' element={<LearnersTestDetailsQuizPage />} />
+          <Route path='/learners-licence-disqualifications' element={ <LearnersLicenceDisqualificationsPage />}/>
+          <Route path='/learners-licence-disqualifications/quiz' element={<LearnersLicenceDisqualificationsQuizPage />}/>
         </Routes>
       </div>
     </Router>
