@@ -1,18 +1,23 @@
-import React from 'react';
 import { useK53Data } from '../hooks/useK53Data';
-import StyledButton from '../components/StyledButton';
-import VerticalLineContainer from '../components/VerticalLineContainer';
 import PageLayout from '../components/PageLayout';
+import VerticalLineContainer from '../components/VerticalLineContainer';
+import StyledButton from '../components/StyledButton';
 
 const K53ExplainedPage = () => {
   const { content, loading, error } = useK53Data('Introduction', 'K53 Explained');
 
   if (loading) return <div className="text-white">Loading...</div>;
-  if (error) return (
-    <div className="text-red-500">
-      {error}. Check Airtable for matching records or console logs for details.
-    </div>
-  );
+  if (error)
+    return (
+      <div className="text-red-500">
+        {error}. Check Airtable for matching records or console logs for details.
+      </div>
+    );
+
+  // Add line breaks after each sentence
+  const formattedContent = content
+    ? content.replace(/([.?!])\s+/g, '$1\n')
+    : 'No content available.';
 
   return (
     <PageLayout
@@ -23,9 +28,15 @@ const K53ExplainedPage = () => {
       }
       contentClassName="justify-start"
     >
-      <VerticalLineContainer className="flex flex-col items-center mt-32 max-h-[70vh]">
-        <div className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-2xl h-[180px] flex items-center justify-center text-center text-xl leading-relaxed">
-          {content || 'No content available.'}
+      <VerticalLineContainer className="flex flex-col items-center mt-32">
+        <div
+          className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-2xl text-center leading-relaxed"
+          style={{
+            whiteSpace: 'pre-line',
+            fontSize: 'clamp(0.75rem, 1.8vw, 1.25rem)',
+          }}
+        >
+          {formattedContent}
         </div>
 
         <StyledButton
