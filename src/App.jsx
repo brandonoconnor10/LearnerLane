@@ -19,6 +19,13 @@ import TrafficSignalsPage from './pages/TrafficSignalsPage';
 import TemporarySignsPage from './pages/TemporarySignsPage';
 import RoadMarkersPage from './pages/RoadMarkersPage';
 import ControlSignsPage from './pages/ControlSignsPage';
+import CommandSignPage from './pages/CommandSignsPage';
+import ProhibitionSignsPage from './pages/ProhibitionSignsPage';
+import ReservationSignPage from './pages/ReservationSignsPage';
+import ComprehensionSignsPage from './pages/ComprehensionSignsPage';
+import DerestrictionSignsPage from './pages/DerestrictionSignsPage';
+import ExclusiveSecondarySignsPage from './pages/ExclusiveSecondarySignsPage';
+import SelectiveRestrictionSignsPage from './pages/SelectiveRestrictionSignsPage';
 
 
 const App = () => {
@@ -46,6 +53,14 @@ const App = () => {
           <Route path='/learners-licence-disqualifications/quiz' element={<LearnersLicenceDisqualificationsQuizPage />}/>
           <Route path='/before-your-test' element={ <BeforeYourTestPage />}/>
           <Route path='/before-your-test/quiz' element={<BeforeYourTestQuizPage />}/>
+          <Route path='/command-signs' element={<CommandSignPage />}/>
+          <Route path='/reservation-signs' element={<ReservationSignPage />}/>
+          <Route path='/prohibition-signs' element={<ProhibitionSignsPage />}/>
+
+          <Route path='/comprehension-signs' element={<ComprehensionSignsPage />}/>
+          <Route path='/de-restriction-signs' element={<DerestrictionSignsPage />}/>
+          <Route path='/exclusive-secondary-signs' element={<ExclusiveSecondarySignsPage />}/>
+          <Route path='/selective-restriction-signs' element={<SelectiveRestrictionSignsPage />}/>
         </Routes>
       </div>
     </Router>
