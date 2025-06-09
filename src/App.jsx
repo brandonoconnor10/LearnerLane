@@ -26,6 +26,11 @@ import ComprehensionSignsPage from './pages/ComprehensionSignsPage';
 import DerestrictionSignsPage from './pages/DerestrictionSignsPage';
 import ExclusiveSecondarySignsPage from './pages/ExclusiveSecondarySignsPage';
 import SelectiveRestrictionSignsPage from './pages/SelectiveRestrictionSignsPage';
+import RoadLayoutSignsPage from './pages/RoadLayoutSignsPage';
+import DirectionOfMovementSignsPage from './pages/DirectionOfMovementSignsPage';
+import SymbolicSignsPage from './pages/SymbolicSignsPage';
+import HazardMarkerSignsPage from './pages/HazardMarkerSignsPage';
+import WarningSignCombinationsPage from './pages/WarningSignCombinationsPage';
 
 const App = () => {
   return (
@@ -59,6 +64,13 @@ const App = () => {
           <Route path='/de-restriction-signs' element={<DerestrictionSignsPage />}/>
           <Route path='/exclusive-secondary-signs' element={<ExclusiveSecondarySignsPage />}/>
           <Route path='/selective-restriction-signs' element={<SelectiveRestrictionSignsPage />}/>
+          <Route path='/road-layout-signs' element={<RoadLayoutSignsPage />}/>
+          <Route path='/direction-of-movement-signs' element={<DirectionOfMovementSignsPage />}/>
+          <Route path='/symbolic-signs'  element={<SymbolicSignsPage />}/>
+          <Route path='/hazard-marker-signs' element={<HazardMarkerSignsPage />}/>
+          <Route path='/warning-sign-combinations-signs' element={<WarningSignCombinationsPage />}/>
+
+
         </Routes>
       </div>
     </Router>
