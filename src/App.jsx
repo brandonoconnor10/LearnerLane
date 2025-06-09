@@ -31,6 +31,15 @@ import DirectionOfMovementSignsPage from './pages/DirectionOfMovementSignsPage';
 import SymbolicSignsPage from './pages/SymbolicSignsPage';
 import HazardMarkerSignsPage from './pages/HazardMarkerSignsPage';
 import WarningSignCombinationsPage from './pages/WarningSignCombinationsPage';
+import LocationSignSymbolsPage from './pages/LocationSignSymbolsPage';
+import DirectionSignSymbolsPage from './pages/DirectionSignSymbolsPage';
+import DiagrammaticSignSymbolsPage from './pages/DiagrammaticSignSymbolsPage';
+import LocationSignsPage from './pages/LocationSignsPage';
+import RouteMarkerSignsPage from './pages/RouteMarkerSignsPage';
+import DirectionSignsPage from './pages/DirectionSignsPage';
+import FreewayDirectionSignsPage from './pages/FreewayDirectionSignsPage';
+import TourismSignSymbolsPage from './pages/TourismSignSymbolsPage';
+import InformationSignsPage from './pages/InformationSignsPage';
 
 const App = () => {
   return (
@@ -70,7 +79,15 @@ const App = () => {
           <Route path='/hazard-marker-signs' element={<HazardMarkerSignsPage />}/>
           <Route path='/warning-sign-combinations-signs' element={<WarningSignCombinationsPage />}/>
 
-
+          <Route path='/location-sign-symbols' element={<LocationSignSymbolsPage /> } />
+          <Route path='/direction-sign-symbols' element={<DirectionSignSymbolsPage /> }/>
+          <Route path='/diagrammatic-sign-symbols' element={<DiagrammaticSignSymbolsPage /> }/>
+          <Route path='/location-signs' element={<LocationSignsPage /> }/>
+          <Route path='/route-marker-signs' element={<RouteMarkerSignsPage /> }/>
+          <Route path='/direction-signs' element={<DirectionSignsPage /> }/>
+          <Route path='/freeway-direction-signs' element={<FreewayDirectionSignsPage /> }/>
+          <Route path='/tourism-sign-symbols' element={<TourismSignSymbolsPage /> }/>
+          <Route path='/information-signs' element={<InformationSignsPage /> }/>
         </Routes>
       </div>
     </Router>
