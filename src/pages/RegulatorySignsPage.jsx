@@ -8,7 +8,7 @@ const slugify = (str) =>
   str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
 function RegulatorySignsPage() {
-  const { content, loading, error } = useK53Data("Road Sign", "Regulatory Signs");
+  const { content, loading, error } = useK53Data("Road Signs", "Regulatory Signs");
 
   const sections = [
     "Control Signs",
