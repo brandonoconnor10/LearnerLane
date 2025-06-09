@@ -27,7 +27,6 @@ import DerestrictionSignsPage from './pages/DerestrictionSignsPage';
 import ExclusiveSecondarySignsPage from './pages/ExclusiveSecondarySignsPage';
 import SelectiveRestrictionSignsPage from './pages/SelectiveRestrictionSignsPage';
 
-
 const App = () => {
   return (
     <Router>
@@ -56,7 +55,6 @@ const App = () => {
           <Route path='/command-signs' element={<CommandSignPage />}/>
           <Route path='/reservation-signs' element={<ReservationSignPage />}/>
           <Route path='/prohibition-signs' element={<ProhibitionSignsPage />}/>
-
           <Route path='/comprehension-signs' element={<ComprehensionSignsPage />}/>
           <Route path='/de-restriction-signs' element={<DerestrictionSignsPage />}/>
           <Route path='/exclusive-secondary-signs' element={<ExclusiveSecondarySignsPage />}/>
