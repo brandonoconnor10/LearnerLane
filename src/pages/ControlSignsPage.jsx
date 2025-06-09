@@ -1,3 +1,6 @@
+import PageLayout from '../components/PageLayout';
+import VerticalLineContainer from '../components/VerticalLineContainer';
+import StyledButton from '../components/StyledButton';
 import { useK53Data } from '../hooks/useK53Data';
 import { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
@@ -24,9 +27,8 @@ export default function ControlSignsPage() {
             sortOrder: record.fields.SortOrder || 0, 
           }));
 
-          
-        // Sort images by SortOrder
-        signImages.sort((a, b) => a.sortOrder - b.sortOrder);
+          // Sort images by SortOrder
+          signImages.sort((a, b) => a.sortOrder - b.sortOrder);
 
         setImages(signImages);
       } catch (err) {
@@ -37,37 +39,55 @@ export default function ControlSignsPage() {
     loadImages();
   }, []);
 
-  return (
-    <div className="min-h-screen bg-[--color-navy-dark] text-[--color-white] font-[--font-rajdhani] p-6">
-      <h1 className="text-4xl font-bold text-center mb-2 font-[--font-orbitron]">Learner Lane</h1>
-      <h2 className="text-2xl text-center text-[--color-cyan] mb-6">Control Signs</h2>
+  // Show nothing until data is ready
+  if (loading) {
+    return null;
+  }
 
-      <div className="border border-[--color-cyan] p-6 max-w-3xl mx-auto text-[--color-gray-light] mb-12 rounded">
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p className="text-red-500">{error}</p>
-        ) : (
-          <p className="whitespace-pre-line">{content}</p>
-        )}
+  // If there's an error, display an error page
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <p className="text-lg text-red-400">{error}</p>
       </div>
+    );
+  }
 
-      <div className="flex flex-col items-center gap-12">
-        {images.map((img, index) => (
-          <div key={index} className="flex flex-col items-center border border-[--color-cyan] p-4 w-64 rounded">
-            <div className="bg-white p-4 rounded mb-3">
-              <img
-                src={img.imageUrl}
-                alt={img.title}
-                className="w-40 h-40 object-contain"
-              />
-            </div>
-            <div className="text-[--color-cyan-light] text-lg font-semibold text-center">
-              {img.title}
+  return (
+    <PageLayout
+      subtitle={
+        <>
+          <h2 className="text-2xl md:text-3xl font-semibold text-cyan font-rajdhani mt-4">
+            Control Signs
+          </h2>
+          <div className="mt-6 flex justify-center">
+            <div className="w-full max-w-3xl rounded-2xl border-2 border-cyan p-6 md:p-8 bg-white/5 backdrop-blur-md text-gray-300 text-center leading-relaxed">
+              <p className="whitespace-pre-line">{content}</p>
             </div>
           </div>
+        </>
+      }
+      contentClassName="items-start justify-center"
+    >
+      <VerticalLineContainer className="mt-6">
+        {images.map((img, index) => (
+          <div key={index} className="relative flex flex-col items-center z-10">
+            <StyledButton
+              variant="large"
+              className="my-6"
+            >
+              <div className="flex items-center">
+                <img
+                  src={img.imageUrl}
+                  alt={img.title}
+                  className="w-16 h-16 object-contain mr-4"
+                />
+                {img.title}
+              </div>
+            </StyledButton>
+          </div>
         ))}
-      </div>
-    </div>
+      </VerticalLineContainer>
+    </PageLayout>
   );
 }
