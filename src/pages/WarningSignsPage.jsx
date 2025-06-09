@@ -18,7 +18,7 @@ function WarningSignsPage() {
    "Direction of Movement Signs",
    "Symbolic Signs",
    "Hazard Marker Signs",
-   "Warning Sign Combinations",
+   "Warning Sign Combinations Signs",
   ];
 
   // Show nothing until data is ready
