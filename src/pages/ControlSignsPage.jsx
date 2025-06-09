@@ -87,6 +87,14 @@ export default function ControlSignsPage() {
             </StyledButton>
           </div>
         ))}
+        <div className="relative flex flex-col items-center z-10">
+          <StyledButton
+            variant="large"
+            className="my-6"
+          >
+            Take Quiz
+          </StyledButton>
+        </div>
       </VerticalLineContainer>
     </PageLayout>
   );
