@@ -13,15 +13,20 @@ export default function ControlSignsPage() {
           'Section', '"Road Signs"',
           'Subsection', '"Control Signs"',
           100,
-          ['Image', 'Content', 'Type'] 
+          ['Image', 'Content', 'Type', 'SortOrder'] 
         );
 
         const signImages = result
           .filter((record) => record.fields?.Type === 'Sign' && record.fields?.Image)
           .map((record) => ({
             imageUrl: record.fields.Image[0].url,
-            title: record.fields.Content || 'Unnamed Sign', 
+            title: record.fields.Content || 'Unnamed Sign',
+            sortOrder: record.fields.SortOrder || 0, 
           }));
+
+          
+        // Sort images by SortOrder
+        signImages.sort((a, b) => a.sortOrder - b.sortOrder);
 
         setImages(signImages);
       } catch (err) {
