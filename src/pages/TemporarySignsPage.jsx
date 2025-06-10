@@ -10,7 +10,7 @@ const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, 
 
 
 function TemporarySignsPage() {
-  const { content, loading, error } = useK53Data("Road Signs", "Temporary Signs");
+  const { content, loading, error } = useK53Data("Road Signs", "Temporary Sign");
 
 
   const sections = [
