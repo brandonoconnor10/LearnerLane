@@ -10,10 +10,14 @@ const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, 
 
 
 function TrafficSignalsPage() {
-  const { content, loading, error } = useK53Data("Road Signs", "Traffic Signals");
+  const { content, loading, error } = useK53Data("Road Signs", "Traffic Signal");
 
   const sections = [
-    "Standard Traffic Signals"
+    "Standard Traffic Signals",
+    "Overhead Lane Direction Control Arrows",
+    "Hand Signals",
+    "Flag Signals",
+
   ];
 
   // Show nothing until data is ready
