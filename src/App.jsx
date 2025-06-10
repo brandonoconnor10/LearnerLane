@@ -52,6 +52,10 @@ import TemporaryGuidanceSignsPage from './pages/TemporaryGuidanceSignsPage';
 import TemporaryInformationSignsPage from './pages/TemporaryInformationSignsPage';
 import TemporarySignCombinationsPage from './pages/TemporarySignCombinationsPage';
 import RoadMarkersSignPage from './pages/RoadMarkersSignsPage';
+import StandardTrafficSignalsPage from './pages/StandardTrafficSignalsPage';
+import OverheadLaneDirectionControlArrowsPage from './pages/OverheadLaneDirectionControlArrowsPage';
+import HandSignalsPage from './pages/HandSignalsPage';
+import FlagSignalsPage from './pages/FlagSignalsPage';
 
 const App = () => {
   return (
@@ -111,6 +115,10 @@ const App = () => {
           <Route path='/temporary-information-signs' element={<TemporaryInformationSignsPage /> }/>
           <Route path='/temporary-sign-combinations' element={<TemporarySignCombinationsPage /> }/>
           <Route path='/road-markers' element={<RoadMarkersSignPage /> }/>
+          <Route path='/standard-traffic-signals' element={<StandardTrafficSignalsPage /> }/>
+          <Route path='/overhead-lane-direction-control-arrows' element={<OverheadLaneDirectionControlArrowsPage /> }/>
+          <Route path='/hand-signals' element={<HandSignalsPage /> }/>
+          <Route path='/flag-signals' element={<FlagSignalsPage /> }/>
         </Routes>
       </div>
     </Router>
