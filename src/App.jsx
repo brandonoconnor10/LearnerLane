@@ -40,6 +40,18 @@ import DirectionSignsPage from './pages/DirectionSignsPage';
 import FreewayDirectionSignsPage from './pages/FreewayDirectionSignsPage';
 import TourismSignSymbolsPage from './pages/TourismSignSymbolsPage';
 import InformationSignsPage from './pages/InformationSignsPage';
+import TemporaryControlSignsPage from './pages/TemporaryControlSignsPage';
+import TemporaryCommandSignsPage from './pages/TemporayCommandSignsPage';
+import TemporaryProhibitionSignsPage from './pages/TemporaryProhibitionSignsPage';
+import TemporaryReservationSignsPage from './pages/TemporaryReservationSignsPage';
+import TemporaryRoadLayoutSignsPage from './pages/TemporaryRoadLayoutSignsPage';
+import TemporaryDirectionOfMovementSignsPage from './pages/TemporaryDirectionOfMovementSignsPage';
+import TemporarySymbolicSignsPage from './pages/TemporarySymbolicSignsPage';
+import TemporaryHazardMarkerSignsPage from './pages/TemporaryHazardMarkerSignsPage';
+import TemporaryGuidanceSignsPage from './pages/TemporaryGuidanceSignsPage';
+import TemporaryInformationSignsPage from './pages/TemporaryInformationSignsPage';
+import TemporarySignCombinationsPage from './pages/TemporarySignCombinationsPage';
+import RoadMarkersSignPage from './pages/RoadMarkersSignsPage';
 
 const App = () => {
   return (
@@ -55,7 +67,7 @@ const App = () => {
           <Route path='/traffic-signals' element={<TrafficSignalsPage />}/>
           <Route path='/temporary-signs' element={<TemporarySignsPage />}/>
           <Route path='/control-signs' element={<ControlSignsPage />}/>
-          <Route path='/road-markers' element={<RoadMarkersPage />}/>
+          <Route path='/road-marker-signs' element={<RoadMarkersPage />}/>
           <Route path="/k53-explained" element={<K53ExplainedPage />} />
           <Route path="/k53-explained/quiz" element={<K53ExplainedQuizPage />} />
           <Route path='/getting-started' element={ <GettingStartedPage />} />
@@ -78,7 +90,6 @@ const App = () => {
           <Route path='/symbolic-signs'  element={<SymbolicSignsPage />}/>
           <Route path='/hazard-marker-signs' element={<HazardMarkerSignsPage />}/>
           <Route path='/warning-sign-combinations-signs' element={<WarningSignCombinationsPage />}/>
-
           <Route path='/location-sign-symbols' element={<LocationSignSymbolsPage /> } />
           <Route path='/direction-sign-symbols' element={<DirectionSignSymbolsPage /> }/>
           <Route path='/diagrammatic-sign-symbols' element={<DiagrammaticSignSymbolsPage /> }/>
@@ -88,6 +99,18 @@ const App = () => {
           <Route path='/freeway-direction-signs' element={<FreewayDirectionSignsPage /> }/>
           <Route path='/tourism-sign-symbols' element={<TourismSignSymbolsPage /> }/>
           <Route path='/information-signs' element={<InformationSignsPage /> }/>
+          <Route path='/temporary-control-signs' element={<TemporaryControlSignsPage /> }/>
+          <Route path='/temporary-command-signs' element={<TemporaryCommandSignsPage /> }/>
+          <Route path='/temporary-prohibition-signs' element={<TemporaryProhibitionSignsPage /> }/>
+          <Route path='/temporary-reservation-signs' element={<TemporaryReservationSignsPage /> }/>
+          <Route path='/temporary-road-layout-signs' element={<TemporaryRoadLayoutSignsPage /> }/>
+          <Route path='/temporary-direction-of-movement-signs' element={<TemporaryDirectionOfMovementSignsPage /> }/>
+          <Route path='/temporary-symbolic-signs' element={<TemporarySymbolicSignsPage /> }/>
+          <Route path='/temporary-hazard-marker-signs' element={<TemporaryHazardMarkerSignsPage /> }/>
+          <Route path='/temporary-guidance-signs' element={<TemporaryGuidanceSignsPage /> } />
+          <Route path='/temporary-information-signs' element={<TemporaryInformationSignsPage /> }/>
+          <Route path='/temporary-sign-combinations' element={<TemporarySignCombinationsPage /> }/>
+          <Route path='/road-markers' element={<RoadMarkersSignPage /> }/>
         </Routes>
       </div>
     </Router>
