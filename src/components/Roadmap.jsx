@@ -7,7 +7,6 @@ function RoadMap() {
     "Introduction",
     "Road Signs",
     "Rules of The Road",
-    "Car Controls",
   ];
 
   return (
