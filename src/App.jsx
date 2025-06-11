@@ -57,6 +57,49 @@ import OverheadLaneDirectionControlArrowsPage from './pages/OverheadLaneDirectio
 import HandSignalsPage from './pages/HandSignalsPage';
 import FlagSignalsPage from './pages/FlagSignalsPage';
 import RulesOfTheRoadMapPage from './pages/RulesOfTheRoadMapPage';
+import GeneralRulesPage from './pages/GeneralRulesPage';
+import DrivingOnADividedRoadPage from './pages/DrivingOnADividedRoadPage';
+import DrivingOnTheShoulderOfTheRoadPage from './pages/DrivingOnTheShoulderOfTheRoadPage';
+import ParkingPage from './pages/ParkingPage';
+import OvertakingPage from './pages/OvertakingPage';
+import BeingOvertakenPage from './pages/BeingOvertakenPage';
+import CrossingPublicRoadPage from './pages/CrossingPublicRoadPage';
+import IndicatingPage from './pages/IndicatingPage';
+import TurningLeftPage from './pages/TurningLeftPage';
+import TurningRightPage from './pages/TurningRightPage';
+import RoundaboutsPage from './pages/RoundaboutsPage';
+import StoppingYourVehiclesPage from './pages/StoppingYourVehiclesPage';
+import CompulsoryStopsPage from './pages/CompulsoryStopsPage';
+import GeneralDutiesOfDriversPage from './pages/GeneralDutiesOfDriversPage';
+import DutiesOfMotorcyclesPage from './pages/DutiesOfMotorcyclesPage';
+import VehiclesCausingExcessiveNoisePage from './pages/VehiclesCausingExcessiveNoisePage';
+import PedestrianCrossingPage from './pages/PedestrianCrossingPage';
+import RacingOnPublicRoadsPage from './pages/RacingOnPublicRoadsPage';
+import HinderingTrafficPage from './pages/HinderingTrafficPage';
+import AbandonedVehiclesPage from './pages/AbandonedVehiclesPage';
+import DamageToPublicRoadsPage from './pages/DamageToPublicRoadsPage';
+import FreewaysPage from './pages/FreewaysPage';
+import NotAllowedOnFreewaysPage from './pages/NotAllowedOnFreewaysPage';
+import FreewayAllowedStopsPage from './pages/FreewayAllowedStopsPage';
+import TowingPage from './pages/TowingPage';
+import SpeedLimitsPage from './pages/SpeedLimitsPage';
+import SeatLimitsPage from './pages/SeatLimitsPage';
+import TyresPage from './pages/TyresPage';
+import LightsPage from './pages/LightsPage';
+import VehicleAccidentsPage from './pages/VehicleAccidentsPage';
+import ImportantRulesPage from './pages/ImportantRulesPage';
+import AlcoholAndNarcoticDrugsPage from './pages/AlcoholAndNarcoticDrugsPage';
+import TrianglesPage from './pages/TrianglesPage';
+import CarryingPassengersPage from './pages/CarryingPassengersPage';
+import AnimalsOnPublicRoadsPage from './pages/AnimalsOnPublicRoadsPage';
+import CarryingALoadPage from './pages/CarryingALoadPage';
+import SafetyMarkingsPage from './pages/SafetyMarkingsPage';
+import ReversingPage from './pages/ReversingPage';
+import DefensiveDrivingPage from './pages/DefensiveDrivingPage';
+import StepsOfDefensiveDrivingPage from './pages/StepsOfDefensiveDrivingPage';
+import ProcessOfDefensiveDrivingPage from './pages/ProcessOfDefensiveDrivingPage';
+import ActionsGroupedPage from './pages/ActionsGroupedPage';
+import VariationsPage from './pages/VariationsPage';
 
 const App = () => {
   return (
@@ -121,6 +164,49 @@ const App = () => {
           <Route path='/hand-signals' element={<HandSignalsPage /> }/>
           <Route path='/flag-signals' element={<FlagSignalsPage /> }/>
           <Route path='/rules-of-the-road' element={<RulesOfTheRoadMapPage /> }/>
+          <Route path='/general-rules' element={<GeneralRulesPage /> }/>
+          <Route path='/driving-on-a-divided-road' element={<DrivingOnADividedRoadPage /> }/>
+          <Route path='/driving-on-the-shoulder-of-the-road' element={<DrivingOnTheShoulderOfTheRoadPage /> }/>
+          <Route path='/parking' element={<ParkingPage /> }/>
+          <Route path='/Overtaking-or-passing-another-vehicle' element={<OvertakingPage /> }/>
+          <Route path='/being-overtaken' element={<BeingOvertakenPage /> }/>
+          <Route path='/cross-or-entering-a-public-road-or-traffic-lane' element={<CrossingPublicRoadPage /> }/>
+          <Route path='/indicating' element={<IndicatingPage /> }/>
+          <Route path='/turning-left' element={<TurningLeftPage /> }/>
+          <Route path='/turning-right' element={<TurningRightPage /> }/>
+          <Route path='/minitraffic-circles-and-roundabouts' element={<RoundaboutsPage /> }/>
+          <Route path='/stopping-your-vehicle' element={<StoppingYourVehiclesPage /> }/>
+          <Route path='/compulsory-stops' element={<CompulsoryStopsPage /> }/>
+          <Route path='/general-duties-of-drivers-and-passengers' element={<GeneralDutiesOfDriversPage /> }/>
+          <Route path='/duties-relating-to-motorcycles' element={<DutiesOfMotorcyclesPage /> }/>
+          <Route path='/vehicles-causing-excessive-noise' element={<VehiclesCausingExcessiveNoisePage /> }/>
+          <Route path='/pedestrian-crossing' element={<PedestrianCrossingPage /> }/>
+          <Route path='/racing-and-sport-on-public-roads' element={<RacingOnPublicRoadsPage /> }/>
+          <Route path='/hindering-or-obstructing-traffic-on-a-public-road' element={<HinderingTrafficPage /> }/>
+          <Route path='/abandoned-vehicles-on-public-roads' element={<AbandonedVehiclesPage /> }/>
+          <Route path='/damage-to-public-roads' element={<DamageToPublicRoadsPage /> }/>
+          <Route path='/freeways' element={<FreewaysPage /> }/>
+          <Route path='/not-allowed-on-freeways' element={<NotAllowedOnFreewaysPage /> }/>
+          <Route path='/freeway-allowed-stops' element={<FreewayAllowedStopsPage /> }/>
+          <Route path='/towing' element={<TowingPage /> }/>
+          <Route path='/speed-limits' element={<SpeedLimitsPage /> }/>
+          <Route path='/seat-limits' element={<SeatLimitsPage /> }/>
+          <Route path='/tyres' element={<TyresPage/> }/>
+          <Route path='/lights' element={<LightsPage /> }/>
+          <Route path='/vehicle-accidents' element={<VehicleAccidentsPage /> }/>
+          <Route path='/important-rules' element={<ImportantRulesPage /> }/>
+          <Route path='/alcohol-and-narcotic-drugs' element={<AlcoholAndNarcoticDrugsPage /> }/>
+          <Route path='/triangles' element={<TrianglesPage/> }/>
+          <Route path='/carrying-passengers' element={<CarryingPassengersPage /> }/>
+          <Route path='/animals-on-public-roads' element={<AnimalsOnPublicRoadsPage /> }/>
+          <Route path='carrying-a-load' element={<CarryingALoadPage /> }/>
+          <Route path='/safety-markings' element={<SafetyMarkingsPage /> }/>
+          <Route path='/reversing' element={<ReversingPage /> }/>
+          <Route path='defensive-driving' element={<DefensiveDrivingPage /> }/>
+          <Route path='/4-steps-of-defensive-driving' element={<StepsOfDefensiveDrivingPage /> }/>
+          <Route path='the-process-of-defensive-driving' element={<ProcessOfDefensiveDrivingPage /> }/>
+          <Route path='actions-grouped' element={<ActionsGroupedPage /> }/>
+          <Route path='variations' element={<VariationsPage /> }/>
         </Routes>
       </div>
     </Router>
