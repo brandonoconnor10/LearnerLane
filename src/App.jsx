@@ -56,6 +56,7 @@ import StandardTrafficSignalsPage from './pages/StandardTrafficSignalsPage';
 import OverheadLaneDirectionControlArrowsPage from './pages/OverheadLaneDirectionControlArrowsPage';
 import HandSignalsPage from './pages/HandSignalsPage';
 import FlagSignalsPage from './pages/FlagSignalsPage';
+import RulesOfTheRoadMapPage from './pages/RulesOfTheRoadMapPage';
 
 const App = () => {
   return (
@@ -119,6 +120,7 @@ const App = () => {
           <Route path='/overhead-lane-direction-control-arrows' element={<OverheadLaneDirectionControlArrowsPage /> }/>
           <Route path='/hand-signals' element={<HandSignalsPage /> }/>
           <Route path='/flag-signals' element={<FlagSignalsPage /> }/>
+          <Route path='/rules-of-the-road' element={<RulesOfTheRoadMapPage /> }/>
         </Routes>
       </div>
     </Router>
