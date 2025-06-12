@@ -27,9 +27,9 @@ const BeforeYourTestQuizPage = () => {
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      setSelectedOption(null); // Reset selection for the next question
+      setSelectedOption(null);
     } else {
-      navigate('/introduction');
+      navigate('/');
     }
   };
 
@@ -43,12 +43,10 @@ const BeforeYourTestQuizPage = () => {
       contentClassName="justify-start"
     >
       <VerticalLineContainer className="flex flex-col items-center mt-32 max-h-[70vh] px-8">
-        {/* Question Box */}
         <div className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-3xl h-[100px] flex items-center justify-center text-center text-xl leading-relaxed font-rajdhani">
           {content || 'No question available.'}
         </div>
 
-        {/* Options Blocks in 2x2 Grid */}
         <div className="grid grid-cols-2 gap-6 mt-8 w-full max-w-3xl">
           {options.map((option, index) => (
             <button
@@ -64,13 +62,12 @@ const BeforeYourTestQuizPage = () => {
           ))}
         </div>
 
-        {/* Next Question or Next Topic Button (Only for Correct Answer) */}
         {selectedOption !== null && options[selectedOption] === answer && (
           <button
             onClick={handleNext}
             className="mt-12 px-6 py-3 bg-cyan text-white rounded-lg hover:bg-cyan-light transition-colors duration-200 text-lg font-inter"
           >
-            {currentIndex < questions.length - 1 ? 'Next Question' : 'Next Topic'}
+            {currentIndex < questions.length - 1 ? 'Next Question' : 'Home'}
           </button>
         )}
       </VerticalLineContainer>
