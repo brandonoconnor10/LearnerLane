@@ -89,6 +89,8 @@ export default function ProhibitionSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/prohibition-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
