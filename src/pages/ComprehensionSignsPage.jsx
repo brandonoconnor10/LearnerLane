@@ -89,6 +89,8 @@ export default function ComprehensionSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/comprehension-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
