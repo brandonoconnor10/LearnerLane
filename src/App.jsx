@@ -103,6 +103,7 @@ import VariationsPage from './pages/VariationsPage';
 import ControlSignsQuizPage from './pages/ControlSignsQuizPage';
 import CommandSignQuizPage from './pages/CommandSignsQuizPage';
 import ProhibitionSignsQuizPage from './pages/ProhibitionSignsQuizPage';
+import ReservationSignsQuizPage from './pages/ReservationSignsQuizPage';
 
 const App = () => {
   return (
@@ -129,6 +130,7 @@ const App = () => {
           <Route path='/learners-licence-disqualifications/quiz' element={<LearnersLicenceDisqualificationsQuizPage />}/>
           <Route path='/before-your-test' element={ <BeforeYourTestPage />}/>
           <Route path='/before-your-test/quiz' element={<BeforeYourTestQuizPage />}/>
+          <Route path='/reservation-signs/quiz' element={<ReservationSignsQuizPage />}/>
           <Route path='/control-signs/quiz' element={<ControlSignsQuizPage />}/>
           <Route path='/command-signs/quiz' element={<CommandSignQuizPage />}/>
           <Route path='/prohibition-signs/quiz' element={<ProhibitionSignsQuizPage />}/>
