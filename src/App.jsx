@@ -104,6 +104,7 @@ import ControlSignsQuizPage from './pages/ControlSignsQuizPage';
 import CommandSignQuizPage from './pages/CommandSignsQuizPage';
 import ProhibitionSignsQuizPage from './pages/ProhibitionSignsQuizPage';
 import ReservationSignsQuizPage from './pages/ReservationSignsQuizPage';
+import ComprehensionSignsQuizPage from './pages/ComprehensionSignsQuizPage';
 
 const App = () => {
   return (
@@ -122,6 +123,7 @@ const App = () => {
           <Route path='/road-marker-signs' element={<RoadMarkersPage />}/>
           <Route path="/k53-explained" element={<K53ExplainedPage />} />
           <Route path="/k53-explained/quiz" element={<K53ExplainedQuizPage />} />
+          <Route path='/comprehension-signs/quiz' element={<ComprehensionSignsQuizPage />}/>
           <Route path='/getting-started' element={ <GettingStartedPage />} />
           <Route path="/getting-started/quiz" element={<GettingStartedQuizPage />} />
           <Route path="/learners-test-details" element={<LearnersTestDetailsPage />} />
