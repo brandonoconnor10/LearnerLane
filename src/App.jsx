@@ -106,6 +106,7 @@ import ProhibitionSignsQuizPage from './pages/ProhibitionSignsQuizPage';
 import ReservationSignsQuizPage from './pages/ReservationSignsQuizPage';
 import ComprehensionSignsQuizPage from './pages/ComprehensionSignsQuizPage';
 import DerestrictionSignsQuizPage from './pages/DerestrictionSignsQuizPage';
+import ExclusiveSecondaryQuizPage from './pages/ExclusiveSecondarySignsQuizPage';
 
 const App = () => {
   return (
@@ -139,6 +140,7 @@ const App = () => {
           <Route path='/prohibition-signs/quiz' element={<ProhibitionSignsQuizPage />}/>
           <Route path='/command-signs' element={<CommandSignPage />}/>
           <Route path='/reservation-signs' element={<ReservationSignPage />}/>
+          <Route path='/exclusive-secondary-signs/quiz' element={<ExclusiveSecondaryQuizPage />}/>
           <Route path='/prohibition-signs' element={<ProhibitionSignsPage />}/>
           <Route path='/comprehension-signs' element={<ComprehensionSignsPage />}/>
           <Route path='/de-restriction-signs' element={<DerestrictionSignsPage />}/>
