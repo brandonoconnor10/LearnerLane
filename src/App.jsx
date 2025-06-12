@@ -100,6 +100,8 @@ import StepsOfDefensiveDrivingPage from './pages/StepsOfDefensiveDrivingPage';
 import ProcessOfDefensiveDrivingPage from './pages/ProcessOfDefensiveDrivingPage';
 import ActionsGroupedPage from './pages/ActionsGroupedPage';
 import VariationsPage from './pages/VariationsPage';
+import ControlSignsQuizPage from './pages/ControlSignsQuizPage';
+import CommandSignQuizPage from './pages/CommandSignsQuizPage';
 
 const App = () => {
   return (
@@ -126,6 +128,8 @@ const App = () => {
           <Route path='/learners-licence-disqualifications/quiz' element={<LearnersLicenceDisqualificationsQuizPage />}/>
           <Route path='/before-your-test' element={ <BeforeYourTestPage />}/>
           <Route path='/before-your-test/quiz' element={<BeforeYourTestQuizPage />}/>
+          <Route path='/control-signs/quiz' element={<ControlSignsQuizPage />}/>
+          <Route path='/command-signs/quiz' element={<CommandSignQuizPage />}/>
           <Route path='/command-signs' element={<CommandSignPage />}/>
           <Route path='/reservation-signs' element={<ReservationSignPage />}/>
           <Route path='/prohibition-signs' element={<ProhibitionSignsPage />}/>
