@@ -89,6 +89,8 @@ export default function TourismSignSymbolsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/tourism-sign-symbols/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
