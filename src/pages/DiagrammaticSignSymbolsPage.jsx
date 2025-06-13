@@ -89,6 +89,8 @@ export default function DiagrammaticSignSymbolsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/diagrammatic-sign-symbols/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
