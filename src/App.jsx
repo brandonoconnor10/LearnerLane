@@ -113,6 +113,15 @@ import DirectionOfMovementSignsQuizPage from './pages/DirectionOfMovementSignsQu
 import SymbolicSignsQuizPage from './pages/SymbolicSignsQuizPage';
 import HazardMarkerSignsQuizPage from './pages/HazardMarkerSignsQuizPage';
 import WarningSignCombinationsSignsQuizPage from './pages/WarningSignCombinationsSignsQuizPage';
+import LocationSignSymbolQuizPage from './pages/LocationSignSymbolQuizPage';
+import DirectionSignSymbolsQuizPage from './pages/DirectionSignSymbolsQuizPage';
+import DiagrammaticSignSymbolsQuizPage from './pages/DiagrammaticSignSymbolsQuizPage';
+import LocationSignQuizPage from './pages/LocationSignQuizPage';
+import RouteMarkerSignsQuizPage from './pages/RouteMarkerSignsQuizPage';
+import DirectionSignsQuizPage from './pages/DirectionSignsQuizPage';
+import FreewayDirectionSignsQuizPage from './pages/FreewayDirectionSignsQuizPage';
+import TourismSignSymbolsQuizPage from './pages/TourismSignSymbolsQuizPage';
+import InformationSignsQuizPage from './pages/InformationSignsQuizPage';
 
 const App = () => {
   return (
@@ -233,6 +242,15 @@ const App = () => {
           <Route path='/symbolic-signs/quiz' element={<SymbolicSignsQuizPage /> }/>
           <Route path='/hazard-marker-signs/quiz' element={<HazardMarkerSignsQuizPage /> }/>
           <Route path='/warning-sign-combinations-signs/quiz' element={<WarningSignCombinationsSignsQuizPage /> } />
+          <Route path='/location-sign-symbols/quiz' element={<LocationSignSymbolQuizPage /> }/>
+          <Route path='/direction-sign-symbols/quiz' element={<DirectionSignSymbolsQuizPage /> }/>
+          <Route path='/diagrammatic-sign-symbols/quiz' element={<DiagrammaticSignSymbolsQuizPage /> }/>
+          <Route path='/location-signs/quiz' element={<LocationSignQuizPage /> }/>
+          <Route path='/route-marker-signs/quiz' element={<RouteMarkerSignsQuizPage /> }/>
+          <Route path='/direction-signs/quiz' element={<DirectionSignsQuizPage /> }/>
+          <Route path='/freeway-direction-signs/quiz' element={<FreewayDirectionSignsQuizPage /> }/>
+          <Route path='/tourism-sign-symbols/quiz' element={<TourismSignSymbolsQuizPage /> }/>
+          <Route path='/information-signs/quiz' element={<InformationSignsQuizPage /> }/>
         </Routes>
       </div>
     </Router>
