@@ -56,7 +56,7 @@ const BeforeYourTestQuizPage = () => {
                 selectedOption === index ? (option === answer ? 'bg-green-500' : 'bg-red-500') : ''
               }`}
             >
-              <span className="mr-2">{String.fromCharCode(97 + index)})</span>
+              <span className="mr-2">{`${String.fromCharCode(97 + index)})`}</span>
               <span className={`leading-normal ${option.length < 30 ? 'text-lg' : 'text-base'}`}>{option}</span>
             </button>
           ))}
