@@ -89,6 +89,8 @@ export default function FreewayDirectionSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/freeway-direction-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
