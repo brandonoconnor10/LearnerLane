@@ -89,6 +89,8 @@ export default function DirectionSignSymbolsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/direction-sign-symbols/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
