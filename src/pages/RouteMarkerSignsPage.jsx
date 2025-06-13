@@ -89,6 +89,8 @@ export default function RouteMarkerSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/route-marker-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
