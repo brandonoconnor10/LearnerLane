@@ -89,6 +89,8 @@ export default function RoadLayoutSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/road-layout-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
