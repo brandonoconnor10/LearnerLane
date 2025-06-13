@@ -108,6 +108,11 @@ import ComprehensionSignsQuizPage from './pages/ComprehensionSignsQuizPage';
 import DerestrictionSignsQuizPage from './pages/DerestrictionSignsQuizPage';
 import ExclusiveSecondaryQuizPage from './pages/ExclusiveSecondarySignsQuizPage';
 import SelectiveRestrictionSignsQuizPage from './pages/SelectiveRestrictionSignsQuizPage';
+import RoadLayoutSignsQuizPage from './pages/RoadLayoutSignsQuizPage';
+import DirectionOfMovementSignsQuizPage from './pages/DirectionOfMovementSignsQuizPage';
+import SymbolicSignsQuizPage from './pages/SymbolicSignsQuizPage';
+import HazardMarkerSignsQuizPage from './pages/HazardMarkerSignsQuizPage';
+import WarningSignCombinationsSignsQuizPage from './pages/WarningSignCombinationsSignsQuizPage';
 
 const App = () => {
   return (
@@ -220,9 +225,14 @@ const App = () => {
           <Route path='/reversing' element={<ReversingPage /> }/>
           <Route path='defensive-driving' element={<DefensiveDrivingPage /> }/>
           <Route path='/4-steps-of-defensive-driving' element={<StepsOfDefensiveDrivingPage /> }/>
-          <Route path='the-process-of-defensive-driving' element={<ProcessOfDefensiveDrivingPage /> }/>
-          <Route path='actions-grouped' element={<ActionsGroupedPage /> }/>
-          <Route path='variations' element={<VariationsPage /> }/>
+          <Route path='/the-process-of-defensive-driving' element={<ProcessOfDefensiveDrivingPage /> }/>
+          <Route path='/actions-grouped' element={<ActionsGroupedPage /> }/>
+          <Route path='/variations' element={<VariationsPage /> }/>
+          <Route path='/road-layout-signs/quiz' element={<RoadLayoutSignsQuizPage /> }/>
+          <Route path='/direction-of-movement-signs/quiz' element={<DirectionOfMovementSignsQuizPage /> }/>
+          <Route path='/symbolic-signs/quiz' element={<SymbolicSignsQuizPage /> }/>
+          <Route path='/hazard-marker-signs/quiz' element={<HazardMarkerSignsQuizPage /> }/>
+          <Route path='/warning-sign-combinations-signs/quiz' element={<WarningSignCombinationsSignsQuizPage /> } />
         </Routes>
       </div>
     </Router>
