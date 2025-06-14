@@ -89,6 +89,8 @@ export default function TemporaryRoadLayoutSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/temporary-road-layout-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
