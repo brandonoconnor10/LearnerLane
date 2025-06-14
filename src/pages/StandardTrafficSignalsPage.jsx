@@ -42,14 +42,14 @@ export default function StandardTrafficSignalsPage() {
     loadItems();
   }, []);
 
-  if (loading) return null; // Return null during loading
+  if (loading) return null;
 
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
         <p className="text-lg text-red-400">{error}</p>
       </div>
-    ); // Display error page if data fetch fails
+    );
   }
 
   return (
@@ -79,6 +79,13 @@ export default function StandardTrafficSignalsPage() {
             </StyledButton>
           </div>
         ))}
+
+        {/* Back Button */}
+        <div className="flex justify-center mt-10">
+          <StyledButton to="/traffic-signals" asLink variant="large">
+            Traffic Signals
+          </StyledButton>
+        </div>
       </VerticalLineContainer>
     </PageLayout>
   );
