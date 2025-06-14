@@ -89,6 +89,8 @@ export default function TemporaryReservationSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/temporary-reservation-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
