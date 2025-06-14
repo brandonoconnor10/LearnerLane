@@ -77,6 +77,11 @@ export default function HandSignalsPage() {
             </StyledButton>
           </div>
         ))}
+        <div className="flex justify-center mt-10">
+          <StyledButton to="/traffic-signals" asLink variant="large">
+            Traffic Signals
+          </StyledButton>
+        </div>
       </VerticalLineContainer>
     </PageLayout>
   );
