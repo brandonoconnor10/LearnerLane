@@ -89,6 +89,8 @@ export default function TemporaryControlSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/temporary-control-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
