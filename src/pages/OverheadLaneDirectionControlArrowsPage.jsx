@@ -66,14 +66,11 @@ export default function OverheadLaneDirectionControlArrowsPage() {
           <div key={index} className="relative flex flex-col items-center z-10 w-full">
             <StyledButton variant="large" className="my-4 w-full max-w-5xl px-4 py-5 text-left">
               <div className="flex flex-row items-center justify-start w-full gap-6">
-                {/* Image */}
                 <img
                   src={item.imageUrl}
                   alt={item.heading}
                   className="w-20 h-20 object-contain flex-shrink-0"
                 />
-
-                {/* Text content */}
                 <div className="flex flex-col text-white">
                   <div className="text-lg font-bold">{item.heading}</div>
                   <div className="text-sm text-gray-300 mt-1">{item.explanation}</div>
@@ -82,6 +79,11 @@ export default function OverheadLaneDirectionControlArrowsPage() {
             </StyledButton>
           </div>
         ))}
+        <div className="flex justify-center mt-10">
+          <StyledButton to="/traffic-signals" asLink variant="large">
+            Traffic Signals
+          </StyledButton>
+        </div>
       </VerticalLineContainer>
     </PageLayout>
   );
