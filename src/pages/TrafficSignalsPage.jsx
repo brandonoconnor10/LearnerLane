@@ -1,13 +1,10 @@
-
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
+// Removed QuizLink import
 import { useK53Data } from '../hooks/useK53Data';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
-
-
 
 function TrafficSignalsPage() {
   const { content, loading, error } = useK53Data("Road Signs", "Traffic Signal");
@@ -17,15 +14,12 @@ function TrafficSignalsPage() {
     "Overhead Lane Direction Control Arrows",
     "Hand Signals",
     "Flag Signals",
-
   ];
 
-  // Show nothing until data is ready
   if (loading) {
     return null;
   }
 
-  // if there's an error, display an error page instead of just the description box
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
@@ -37,9 +31,9 @@ function TrafficSignalsPage() {
   return (
     <PageLayout
       subtitle={
-       <>
+        <>
           <h2 className="text-2xl md:text-3xl font-semibold text-cyan font-rajdhani mt-4">
-           Traffic Signals
+            Traffic Signals
           </h2>
 
           <div className="mt-6 flex justify-center">
@@ -62,7 +56,7 @@ function TrafficSignalsPage() {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
+            {/* QuizLink removed */}
           </div>
         ))}
       </VerticalLineContainer>
