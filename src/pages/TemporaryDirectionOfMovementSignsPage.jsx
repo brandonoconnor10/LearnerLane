@@ -89,6 +89,8 @@ export default function TemporaryDirectionOfMovementSignsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/temporary-direction-of-movement-signs/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
