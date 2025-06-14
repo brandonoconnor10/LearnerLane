@@ -122,6 +122,18 @@ import DirectionSignsQuizPage from './pages/DirectionSignsQuizPage';
 import FreewayDirectionSignsQuizPage from './pages/FreewayDirectionSignsQuizPage';
 import TourismSignSymbolsQuizPage from './pages/TourismSignSymbolsQuizPage';
 import InformationSignsQuizPage from './pages/InformationSignsQuizPage';
+import TemporaryControlSignsQuizPage from './pages/TemporaryControlSignsQuizPage';
+import TemporaryCommandSignsQuizPage from './pages/TemporaryCommandSignsQuizPage';
+import TemporaryProhibitionSignsQuizPage from './pages/TemporaryProhibitionSignsQuizPage';
+import TemporaryReservationSignsQuizPage from './pages/TemporaryReservationSignsQuizPage';
+import TemporaryRoadLayoutSignsQuizPage from './pages/TemporaryRoadLayoutSignsQuizPage';
+import TemporaryDirectionOfMovementSignsQuizPage from './pages/TemporaryDirectionOfMovementSignsQuizPage';
+import TemporarySymbolicSignsQuizPage from './pages/TemporarySymbolicSignsQuizPage';
+import TemporaryHazardMarkerSignsQuizPage from './pages/TemporaryHazardMarkerSignsQuizPage';
+import TemporaryGuidanceSignsQuizPage from './pages/TemporaryGuidanceSignsQuizPage';
+import TemporaryInformationSignsQuizPage from './pages/TemporaryInformationSignsQuizPage';
+import TemporarySignCombinationsQuizPage from './pages/TemporarySignCombinationsQuizPage';
+import RoadMarkersQuizPage from './pages/RoadMarkersQuizPage';
 
 const App = () => {
   return (
@@ -251,6 +263,18 @@ const App = () => {
           <Route path='/freeway-direction-signs/quiz' element={<FreewayDirectionSignsQuizPage /> }/>
           <Route path='/tourism-sign-symbols/quiz' element={<TourismSignSymbolsQuizPage /> }/>
           <Route path='/information-signs/quiz' element={<InformationSignsQuizPage /> }/>
+          <Route path='/temporary-control-signs/quiz' element={<TemporaryControlSignsQuizPage /> }/>
+          <Route path='/temporary-command-signs/quiz' element={<TemporaryCommandSignsQuizPage /> }/>
+          <Route path='/temporary-prohibition-signs/quiz' element={<TemporaryProhibitionSignsQuizPage /> }/>
+          <Route path='/temporary-reservation-signs/quiz' element={<TemporaryReservationSignsQuizPage /> }/>
+          <Route path='/temporary-road-layout-signs/quiz' element={<TemporaryRoadLayoutSignsQuizPage /> }/>
+          <Route path='/temporary-direction-of-movement-signs/quiz' element={<TemporaryDirectionOfMovementSignsQuizPage /> }/>
+          <Route path='/temporary-symbolic-signs/quiz' element={<TemporarySymbolicSignsQuizPage /> }/>
+          <Route path='/temporary-hazard-marker-signs/quiz' element={<TemporaryHazardMarkerSignsQuizPage /> }/>
+          <Route path='/temporary-guidance-signs/quiz' element={<TemporaryGuidanceSignsQuizPage /> }/>
+          <Route path='/temporary-information-signs/quiz' element={<TemporaryInformationSignsQuizPage /> }/>
+          <Route path='/temporary-sign-combinations/quiz' element={<TemporarySignCombinationsQuizPage /> }/>
+          <Route path='/road-markers/quiz' element={<RoadMarkersQuizPage /> }/>
         </Routes>
       </div>
     </Router>
