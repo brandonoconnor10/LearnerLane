@@ -89,6 +89,8 @@ export default function TemporarySignCombinationsPage() {
         ))}
         <div className="relative flex flex-col items-center z-10">
           <StyledButton
+            to="/temporary-sign-combinations/quiz"
+            asLink
             variant="large"
             className="my-6"
           >
