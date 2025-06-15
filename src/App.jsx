@@ -134,6 +134,49 @@ import TemporaryGuidanceSignsQuizPage from './pages/TemporaryGuidanceSignsQuizPa
 import TemporaryInformationSignsQuizPage from './pages/TemporaryInformationSignsQuizPage';
 import TemporarySignCombinationsQuizPage from './pages/TemporarySignCombinationsQuizPage';
 import RoadMarkersQuizPage from './pages/RoadMarkersQuizPage';
+import GeneralRulesQuizPage from './pages/GeneralRulesQuizPage';
+import DrivingOnADividedRoadQuizPage from './pages/DrivingOnADividedRoadQuizPage';
+import DrivingOnTheShoulderOfTheRoadQuizPage from './pages/DrivingOnTheShoulderOfTheRoadQuizPage';
+import ParkingQuizPage from './pages/ParkingQuizPage';
+import OvertakingQuizPage from './pages/OvertakingQuizPage';
+import BeingOvertakenQuizPage from './pages/BeingOvertakenQuizPage';
+import CrossingPublicRoadQuizPage from './pages/CrossingPublicRoadQuizPage';
+import IndicatingQuizPage from './pages/IndicatingQuizPage';
+import TurningLeftQuizPage from './pages/TurningLeftQuizPage';
+import TurningRightQuizPage from './pages/TurningRightQuizPage';
+import RoundaboutsQuizPage from './pages/RoundaboutsQuizPage';
+import StoppingYourVehiclesQuizPage from './pages/StoppingYourVehiclesQuizPage';
+import CompulsoryStopsQuizPage from './pages/CompulsoryStopsQuizPage';
+import GeneralDutiesOfDriversQuizPage from './pages/GeneralDutiesOfDriversQuizPage';
+import DutiesOfMotorcyclesQuizPage from './pages/DutiesOfMotorcyclesQuizPage';
+import VehiclesCausingExcessiveNoiseQuizPage from './pages/VehiclesCausingExcessiveNoiseQuizPage';
+import PedestrianCrossingQuizPage from './pages/PedestrianCrossingQuizPage';
+import RacingOnPublicRoadsQuizPage from './pages/RacingOnPublicRoadsQuizPage';
+import HinderingTrafficQuizPage from './pages/HinderingTrafficQuizPage';
+import AbandonedVehiclesQuizPage from './pages/AbandonedVehiclesQuizPage';
+import DamageToPublicRoadsQuizPage from './pages/DamageToPublicRoadsQuizPage';
+import FreewaysQuizPage from './pages/FreewaysQuizPage';
+import NotAllowedOnFreewaysQuizPage from './pages/NotAllowedOnFreewaysQuizPage';
+import FreewayAllowedStopsQuizPage from './pages/FreewayAllowedStopsQuizPage';
+import TowingQuizPage from './pages/TowingQuizPage';
+import SpeedLimitsQuizPage from './pages/SpeedLimitsQuizPage';
+import SeatLimitsQuizPage from './pages/SeatLimitsQuizPage';
+import TyresQuizPage from './pages/TyresQuizPage';
+import LightsQuizPage from './pages/LightsQuizPage';
+import VehicleAccidentsQuizPage from './pages/VehicleAccidentsQuizPage';
+import ImportantRulesQuizPage from './pages/ImportantRulesQuizPage';
+import AlcoholAndNarcoticDrugsQuizPage from './pages/AlcoholAndNarcoticDrugsQuizPage';
+import TrianglesQuizPage from './pages/TrianglesQuizPage';
+import CarryingPassengersQuizPage from './pages/CarryingPassengersQuizPage';
+import AnimalsOnPublicRoadsQuizPage from './pages/AnimalsOnPublicRoadsQuizPage';
+import CarryingALoadQuizPage from './pages/CarryingALoadQuizPage';
+import SafetyMarkingsQuizPage from './pages/SafetyMarkingsQuizPage';
+import ReversingQuizPage from './pages/ReversingQuizPage';
+import DefensiveDrivingQuizPage from './pages/DefensiveDrivingQuizPage';
+import StepsOfDefensiveDrivingQuizPage from './pages/StepsOfDefensiveDrivingQuizPage';
+import ProcessOfDefensiveDrivingQuizPage from './pages/ProcessOfDefensiveDrivingQuizPage';
+import ActionsGroupedQuizPage from './pages/ActionsGroupedQuizPage';
+import VariationsQuizPage from './pages/VariationsQuizPage';
 
 const App = () => {
   return (
@@ -275,6 +318,50 @@ const App = () => {
           <Route path='/temporary-information-signs/quiz' element={<TemporaryInformationSignsQuizPage /> }/>
           <Route path='/temporary-sign-combinations/quiz' element={<TemporarySignCombinationsQuizPage /> }/>
           <Route path='/road-markers/quiz' element={<RoadMarkersQuizPage /> }/>
+          <Route path='/general-rules/quiz' element=
+          {<GeneralRulesQuizPage /> }/>
+          <Route path='/driving-on-a-divided-road/quiz' element={<DrivingOnADividedRoadQuizPage /> } />
+          <Route path='/driving-on-the-shoulder-of-the-road/quiz' element={<DrivingOnTheShoulderOfTheRoadQuizPage /> }/>
+          <Route path='/parking/quiz' element={<ParkingQuizPage /> }/>
+          <Route path='/overtaking-or-passing-another-vehicle/quiz' element={<OvertakingQuizPage /> }/>
+          <Route path='/being-overtaken/quiz' element={<BeingOvertakenQuizPage /> }/>
+          <Route path='/cross-or-entering-a-public-road-or-traffic-lane/quiz' element={<CrossingPublicRoadQuizPage /> }/>
+          <Route path='/indicating/quiz' element={<IndicatingQuizPage /> }/>
+          <Route path='/turning-left/quiz' element={<TurningLeftQuizPage /> }/>
+          <Route path='/turning-right/quiz' element={<TurningRightQuizPage /> }/>
+          <Route path='/minitraffic-circles-and-roundabouts/quiz' element={<RoundaboutsQuizPage /> }/>
+          <Route path='/stopping-your-vehicle/quiz' element={<StoppingYourVehiclesQuizPage /> }/>
+          <Route path='/compulsory-stops/quiz' element={<CompulsoryStopsQuizPage /> }/>
+          <Route path='/general-duties-of-drivers-and-passengers/quiz' element={<GeneralDutiesOfDriversQuizPage /> }/>
+          <Route path='/duties-relating-to-motorcycles/quiz' element={<DutiesOfMotorcyclesQuizPage /> }/>
+          <Route path='/vehicles-causing-excessive-noise/quiz' element={<VehiclesCausingExcessiveNoiseQuizPage /> } />
+          <Route path='/pedestrian-crossing/quiz' element={<PedestrianCrossingQuizPage /> }/>
+          <Route path='/racing-and-sport-on-public-roads/quiz' element={<RacingOnPublicRoadsQuizPage /> }/>
+          <Route path='/hindering-or-obstructing-traffic-on-a-public-road/quiz' element={<HinderingTrafficQuizPage /> }/>
+          <Route path='/abandoned-vehicles-on-public-roads/quiz' element={<AbandonedVehiclesQuizPage /> }/>
+          <Route path='/damage-to-public-roads/quiz' element={<DamageToPublicRoadsQuizPage /> }/>
+          <Route path='/freeways/quiz' element={<FreewaysQuizPage/> }/>
+          <Route path='/not-allowed-on-freeways/quiz' element={<NotAllowedOnFreewaysQuizPage /> }/>
+          <Route path='/freeway-allowed-stops/quiz' element={<FreewayAllowedStopsQuizPage /> }/>
+          <Route path='/towing/quiz' element={<TowingQuizPage /> }/>
+          <Route path='/speed-limits/quiz' element={<SpeedLimitsQuizPage /> }/>
+          <Route path='/seat-limits/quiz' element={<SeatLimitsQuizPage /> }/>
+          <Route path='/tyres/quiz' element={<TyresQuizPage /> }/>
+          <Route path='/lights/quiz' element={<LightsQuizPage /> }/>
+          <Route path='/vehicle-accidents/quiz' element={<VehicleAccidentsQuizPage /> }/>
+          <Route path='/important-rules/quiz' element={<ImportantRulesQuizPage /> }/>
+          <Route path='alcohol-and-narcotic-drugs/quiz' element={<AlcoholAndNarcoticDrugsQuizPage /> }/>
+          <Route path='/triangles/quiz' element={<TrianglesQuizPage /> }/>
+          <Route path='/carrying-passengers/quiz' element={<CarryingPassengersQuizPage /> }/>
+          <Route path='/animals-on-public-roads/quiz' element={<AnimalsOnPublicRoadsQuizPage /> }/>
+          <Route path='/carrying-a-load/quiz' element={<CarryingALoadQuizPage /> }/>
+          <Route path='/safety-markings/quiz' element={<SafetyMarkingsQuizPage /> }/>
+          <Route path='/reversing/quiz' element={<ReversingQuizPage /> }/>
+          <Route path='/defensive-driving/quiz' element={<DefensiveDrivingQuizPage /> }/>
+          <Route path='/4-steps-of-defensive-driving/quiz' element={<StepsOfDefensiveDrivingQuizPage /> }/>
+          <Route path='/the-process-of-defensive-driving/quiz' element={<ProcessOfDefensiveDrivingQuizPage /> }/>
+          <Route path='/actions-grouped/quiz' element={<ActionsGroupedQuizPage /> }/>
+          <Route path='/variations/quiz' element={<VariationsQuizPage /> }/>
         </Routes>
       </div>
     </Router>
