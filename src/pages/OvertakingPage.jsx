@@ -43,7 +43,7 @@ const OvertakingPage = () => {
         </div>
 
         <StyledButton
-          to="/k53-explained/quiz"
+          to="/overtaking-or-passing-another-vehicle/quiz"
           asLink
           variant="large"
           className="mt-32 mb-6"
