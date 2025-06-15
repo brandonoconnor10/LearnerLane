@@ -43,7 +43,7 @@ const TurningLeftPage = () => {
         </div>
 
         <StyledButton
-          to="/k53-explained/quiz"
+          to="/turning-left/quiz"
           asLink
           variant="large"
           className="mt-32 mb-6"
