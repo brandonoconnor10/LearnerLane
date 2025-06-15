@@ -43,7 +43,7 @@ const DrivingOnADividedRoadPage = () => {
         </div>
 
         <StyledButton
-          to="/k53-explained/quiz"
+          to="/driving-on-a-divided-road/quiz"
           asLink
           variant="large"
           className="mt-32 mb-6"
