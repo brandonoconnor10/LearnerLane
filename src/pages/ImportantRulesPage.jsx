@@ -43,7 +43,7 @@ const ImportantRulesPage = () => {
         </div>
 
         <StyledButton
-          to="/k53-explained/quiz"
+          to="/important-rules/quiz"
           asLink
           variant="large"
           className="mt-32 mb-6"
