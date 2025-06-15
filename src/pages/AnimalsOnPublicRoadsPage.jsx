@@ -43,7 +43,7 @@ const AnimalsOnPublicRoadsPage = () => {
         </div>
 
         <StyledButton
-          to="/k53-explained/quiz"
+          to="/animals-on-public-roads/quiz"
           asLink
           variant="large"
           className="mt-32 mb-6"
