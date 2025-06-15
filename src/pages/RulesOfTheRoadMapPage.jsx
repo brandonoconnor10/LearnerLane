@@ -1,6 +1,7 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
+import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
 
 const slugify = (str) =>
@@ -53,13 +54,9 @@ function RulesOfTheRoadMapPage() {
     "The Process of defensive driving",
     "Actions Grouped",
     "Variations",
-
-
   ];
 
-  if (loading) {
-    return null;
-  }
+  if (loading) return null;
 
   if (error) {
     return (
@@ -97,6 +94,7 @@ function RulesOfTheRoadMapPage() {
             >
               {section}
             </StyledButton>
+            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>
