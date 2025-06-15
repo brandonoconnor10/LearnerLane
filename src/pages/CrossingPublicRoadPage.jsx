@@ -43,7 +43,7 @@ const CrossingPublicRoadPage = () => {
         </div>
 
         <StyledButton
-          to="/k53-explained/quiz"
+          to="/cross-or-entering-a-public-road-or-traffic-lane/quiz"
           asLink
           variant="large"
           className="mt-32 mb-6"
