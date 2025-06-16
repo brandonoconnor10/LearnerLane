@@ -5,7 +5,7 @@ import { useK53Data } from '../hooks/useK53Data';
 import { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
 
-export default function CommandSignPage() {
+export default function CommandSignsPage() {
   const { content, loading, error } = useK53Data('Road Signs', 'Command Sign');
   const [images, setImages] = useState([]);
 
