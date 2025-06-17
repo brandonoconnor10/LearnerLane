@@ -1,4 +1,3 @@
-
 import VerticalLineContainer from './VerticalLineContainer';
 import StyledButton from './StyledButton';
 
