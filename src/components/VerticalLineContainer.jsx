@@ -1,6 +1,3 @@
-
-import React from 'react';
-
 const VerticalLineContainer = ({ children, className = '' }) => {
   return (
     <div className={`flex flex-col items-center relative w-full ${className}`}>
