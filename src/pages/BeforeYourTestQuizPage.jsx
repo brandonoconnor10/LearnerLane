@@ -3,6 +3,7 @@ import { useQuizData } from '../hooks/useQuizData';
 import { useNavigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
+import PulseLoader from '../components/PulseLoader';
 
 const BeforeYourTestQuizPage = () => {
   const { questions, loading, error } = useQuizData('Revision Test', 'Before Your Test');
@@ -10,7 +11,7 @@ const BeforeYourTestQuizPage = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const navigate = useNavigate();
 
-  if (loading) return <div className="text-white">Loading...</div>;
+  if (loading) return <PulseLoader />;
   if (error) return (
     <div className="text-red-500">
       {error}. Check Airtable for matching records or console logs for details.
@@ -20,7 +21,7 @@ const BeforeYourTestQuizPage = () => {
   const currentQuestion = questions[currentIndex];
   const { content, options, answer } = currentQuestion;
 
-  const handleOptionClick = (option, index) => {
+  const handleOptionClick = (index) => {
     setSelectedOption(index);
   };
 
@@ -51,7 +52,7 @@ const BeforeYourTestQuizPage = () => {
           {options.map((option, index) => (
             <button
               key={index}
-              onClick={() => handleOptionClick(option, index)}
+              onClick={() => handleOptionClick(index)}
               className={`relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg text-left font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[120px] flex items-center ${
                 selectedOption === index ? (option === answer ? 'bg-green-500' : 'bg-red-500') : ''
               }`}
