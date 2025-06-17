@@ -57,12 +57,67 @@ import TyresQuizPage from '../pages/TyresQuizPage';
 import VariationsQuizPage from '../pages/VariationsQuizPage';
 import VehicleAccidentsQuizPage from '../pages/VehicleAccidentsQuizPage';
 import VehiclesCausingExcessiveNoiseQuizPage from '../pages/VehiclesCausingExcessiveNoiseQuizPage';
+import ProhibitionSignsQuizPage from '../pages/ProhibitionSignsQuizPage';
+import ReservationSignsQuizPage from '../pages/ReservationSignsQuizPage';
+import ExclusiveSecondaryQuizPage from '../pages/ExclusiveSecondarySignsQuizPage';
+import SelectiveRestrictionSignsQuizPage from '../pages/SelectiveRestrictionSignsQuizPage';
+import RoadLayoutSignsQuizPage from '../pages/RoadLayoutSignsQuizPage';
+import WarningSignCombinationsSignsQuizPage from '../pages/WarningSignCombinationsSignsQuizPage';
+import LocationSignSymbolQuizPage from '../pages/LocationSignSymbolQuizPage';
+import DirectionSignSymbolsQuizPage from '../pages/DirectionSignSymbolsQuizPage';
+import LocationSignQuizPage from '../pages/LocationSignQuizPage';
+import RouteMarkerSignsQuizPage from '../pages/RouteMarkerSignsQuizPage';
+import DirectionSignsQuizPage from '../pages/DirectionSignsQuizPage';
+import FreewayDirectionSignsQuizPage from '../pages/FreewayDirectionSignsQuizPage';
+import TourismSignSymbolsQuizPage from '../pages/TourismSignSymbolsQuizPage';
+import TemporaryControlSignsQuizPage from '../pages/TemporaryControlSignsQuizPage';
+import TemporaryCommandSignsQuizPage from '../pages/TemporaryCommandSignsQuizPage';
+import TemporaryProhibitionSignsQuizPage from '../pages/TemporaryProhibitionSignsQuizPage';
+import TemporaryReservationSignsQuizPage from '../pages/TemporaryReservationSignsQuizPage';
+import TemporaryRoadLayoutSignsQuizPage from '../pages/TemporaryRoadLayoutSignsQuizPage';
+import TemporaryDirectionOfMovementSignsQuizPage from '../pages/TemporaryDirectionOfMovementSignsQuizPage';
+import TemporarySymbolicSignsQuizPage from '../pages/TemporarySymbolicSignsQuizPage';
+import TemporaryHazardMarkerSignsQuizPage from '../pages/TemporaryHazardMarkerSignsQuizPage';
+import TemporaryGuidanceSignsQuizPage from '../pages/TemporaryGuidanceSignsQuizPage';
+import TemporaryInformationSignsQuizPage from '../pages/TemporaryInformationSignsQuizPage';
+import TemporarySignCombinationsQuizPage from '../pages/TemporarySignCombinationsQuizPage';
+import RoadMarkersQuizPage from '../pages/RoadMarkersQuizPage';
 
 const QuizRoutes = () => (
   <>
     <Route path="/diagrammatic-sign-symbols/quiz" element={<DiagrammaticSignSymbolsQuizPage />} />
+    <Route path="/prohibition-signs/quiz" element={<ProhibitionSignsQuizPage />} />
+    <Route path="/symbolic-signs/quiz" element={<SymbolicSignsQuizPage />} />
+    <Route path="/hazard-marker-signs/quiz" element={<HazardMarkerSignsQuizPage />} />
+    <Route path="/warning-sign-combinations-signs/quiz" element={<WarningSignCombinationsSignsQuizPage />} />
+    <Route path="/location-sign-symbols/quiz" element={<LocationSignSymbolQuizPage />} />
+    <Route path="/direction-sign-symbols/quiz" element={<DirectionSignSymbolsQuizPage />} />
+    <Route path="/temporary-control-signs/quiz" element={<TemporaryControlSignsQuizPage />} />
+    <Route path="/temporary-command-signs/quiz" element={<TemporaryCommandSignsQuizPage />} />
+    <Route path="/temporary-prohibition-signs/quiz" element={<TemporaryProhibitionSignsQuizPage />} />
+    <Route path="/temporary-reservation-signs/quiz" element={<TemporaryReservationSignsQuizPage />} />
+    <Route path="/temporary-road-layout-signs/quiz" element={<TemporaryRoadLayoutSignsQuizPage />} />
+    <Route path="/temporary-direction-of-movement-signs/quiz" element={<TemporaryDirectionOfMovementSignsQuizPage />} />
+    <Route path="/temporary-symbolic-signs/quiz" element={<TemporarySymbolicSignsQuizPage />} />
+    <Route path="/temporary-hazard-marker-signs/quiz" element={<TemporaryHazardMarkerSignsQuizPage />} />
+    <Route path="/temporary-guidance-signs/quiz" element={<TemporaryGuidanceSignsQuizPage />} />
+    <Route path="/temporary-information-signs/quiz" element={<TemporaryInformationSignsQuizPage />} />
+    <Route path="/temporary-sign-combinations/quiz" element={<TemporarySignCombinationsQuizPage />} />
+    <Route path="/road-markers/quiz" element={<RoadMarkersQuizPage />} />
+    <Route path="/minitraffic-circles-and-roundabouts/quiz" element={<RoundaboutsQuizPage />} />
+    <Route path="/actions-grouped/quiz" element={<ActionsGroupedQuizPage />} />
+    <Route path="/location-signs/quiz" element={<LocationSignQuizPage />} />
+    <Route path="/information-signs/quiz" element={<InformationSignsQuizPage />} />
+    <Route path="/route-marker-signs/quiz" element={<RouteMarkerSignsQuizPage />} />
+    <Route path="/direction-signs/quiz" element={<DirectionSignsQuizPage />} />
+    <Route path="/freeway-direction-signs/quiz" element={<FreewayDirectionSignsQuizPage />} />
+    <Route path="/tourism-sign-symbols/quiz" element={<TourismSignSymbolsQuizPage />} />
+    <Route path="/road-layout-signs/quiz" element={<RoadLayoutSignsQuizPage />} />
+    <Route path="/reservation-signs/quiz" element={<ReservationSignsQuizPage />} />
+    <Route path="/exclusive-secondary-signs/quiz" element={<ExclusiveSecondaryQuizPage />} />
+    <Route path="/selective-restriction-signs/quiz" element={<SelectiveRestrictionSignsQuizPage />} />
     <Route path="/direction-of-movement-signs/quiz" element={<DirectionOfMovementSignsQuizPage />} />
-    <Route path="/command-sign/quiz" element={<CommandSignQuizPage />} />
+    <Route path="/command-signs/quiz" element={<CommandSignQuizPage />} />
     <Route path="/de-restriction-signs/quiz" element={<DerestrictionSignsQuizPage />} />
     <Route path="/control-signs/quiz" element={<ControlSignsQuizPage />} />
     <Route path="/comprehension-signs/quiz" element={<ComprehensionSignsQuizPage />} />
