@@ -63,7 +63,7 @@ const RulesRoutes = () => (
     
     <Route path="/4-steps-of-defensive-driving" element={<StepsOfDefensiveDrivingPage />} />
     <Route path="/abandoned-vehicles-on-public-roads" element={<AbandonedVehiclesPage />} />
-    <Route path="/actions" element={<ActionsGroupedPage />} />
+    <Route path="/actions-grouped" element={<ActionsGroupedPage />} />
     <Route path="/alcohol-and-narcotic-drugs" element={<AlcoholAndNarcoticDrugsPage />} />
     <Route path="/animals-on-public-roads" element={<AnimalsOnPublicRoadsPage />} />
     <Route path="/being-overtaken" element={<BeingOvertakenPage />} />
