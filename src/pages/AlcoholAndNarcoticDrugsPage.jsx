@@ -1,52 +1,107 @@
+import React, { useState, useEffect } from 'react';
+import { FaCheckCircle, FaRegCircle } from 'react-icons/fa';
 import { useK53Data } from '../hooks/useK53Data';
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
+import PulseLoader from '../components/PulseLoader';
 
 const AlcoholAndNarcoticDrugsPage = () => {
-  const { content, loading, error } = useK53Data('Rules Of The Road', 'Alcohol and narcotic drugs');
+  const { content, loading, error } = useK53Data(
+    'Rules Of The Road',
+    'Alcohol and narcotic drugs'
+  );
 
-  if (loading) return null;
+  const [lines, setLines] = useState([]);
+  const [checkedLines, setCheckedLines] = useState([]);
+
+  useEffect(() => {
+    if (content) {
+      const splitLines = content.split(/(?<=[.?!])\s+/);
+      setLines(splitLines);
+      setCheckedLines(new Array(splitLines.length).fill(false));
+    }
+  }, [content]);
+
+  const toggleCheck = (index) => {
+    setCheckedLines((prev) => {
+      const updated = [...prev];
+      updated[index] = !updated[index];
+      return updated;
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark">
+        <PulseLoader />
+      </div>
+    );
+  }
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
-        <p className="text-lg text-red-400">
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani px-6">
+        <p className="text-lg text-red-400 max-w-xl text-center">
           {error}. Check Airtable for matching records or console logs for details.
         </p>
       </div>
     );
   }
 
-  const formattedContent = content
-    ? content.replace(/([.?!])\s+/g, '$1\n')
-    : 'No content available.';
+  if (!content) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani px-6">
+        <p className="text-lg max-w-xl text-center">No content available.</p>
+      </div>
+    );
+  }
+
+  const allChecked = checkedLines.every(Boolean);
 
   return (
     <PageLayout
       subtitle={
         <h2 className="text-2xl md:text-3xl font-semibold text-cyan font-rajdhani mt-4">
-           Alcohol and narcotic drugs
+          Alcohol and narcotic drugs
         </h2>
       }
       contentClassName="justify-start"
     >
-      <VerticalLineContainer className="flex flex-col items-center mt-32">
+      <VerticalLineContainer className="flex flex-col items-center mt-32 px-4 sm:px-8 max-w-3xl mx-auto w-full">
         <div
-          className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-2xl text-left leading-relaxed"
-          style={{
-            whiteSpace: 'pre-line',
-            fontSize: 'clamp(0.75rem, 1.8vw, 1.25rem)',
-          }}
+          className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-2xl text-left leading-relaxed shadow-lg"
+          style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.25rem)', lineHeight: '1.6' }}
         >
-          {formattedContent}
+          {lines.map((line, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-between border-b border-cyan/30 last:border-b-0 py-2"
+            >
+              <p className="flex-grow pr-4">{line}</p>
+              <button
+                onClick={() => toggleCheck(i)}
+                aria-label={checkedLines[i] ? 'Mark as unread' : 'Mark as read'}
+                className="text-cyan hover:text-cyan-light transition-colors duration-200 focus:outline-none"
+                type="button"
+              >
+                {checkedLines[i] ? <FaCheckCircle size={24} /> : <FaRegCircle size={24} />}
+              </button>
+            </div>
+          ))}
         </div>
 
         <StyledButton
           to="/alcohol-and-narcotic-drugs/quiz"
           asLink
           variant="large"
-          className="mt-32 mb-6"
+          className={`mt-12 mb-6 transition-opacity duration-300 ${
+            allChecked ? 'opacity-100 cursor-pointer' : 'opacity-50 cursor-not-allowed'
+          }`}
+          onClick={(e) => {
+            if (!allChecked) e.preventDefault();
+          }}
+          aria-disabled={!allChecked}
         >
           Take Quiz
         </StyledButton>
