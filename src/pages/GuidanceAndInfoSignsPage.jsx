@@ -1,17 +1,14 @@
-
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
+import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
-
-
 function GuidanceAndInfoSignsPage() {
   const { content, loading, error } = useK53Data("Road Signs", "Guidance and Information Signs");
-
 
   const sections = [
     "Location Sign Symbols",
@@ -25,9 +22,12 @@ function GuidanceAndInfoSignsPage() {
     "Information Signs",
   ];
 
-  // Show nothing until data is ready
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
   }
 
   // if there's an error, display an error page instead of just the description box
