@@ -1,27 +1,25 @@
-
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
+import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
-
-
 
 function RoadMarkersPage() {
   const { content, loading, error } = useK53Data("Road Signs", "Road Marker");
 
-  const sections = [
-    "Road Markers"
-  ];
+  const sections = ["Road Markers"];
 
-   // Show nothing until data is ready
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
   }
 
-  // if there's an error, display an error page instead of just the description box
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
@@ -37,7 +35,6 @@ function RoadMarkersPage() {
           <h2 className="text-2xl md:text-3xl font-semibold text-cyan font-rajdhani mt-4">
             Road Markers
           </h2>
-
           <div className="mt-6 flex justify-center">
             <div className="w-full max-w-4xl rounded-2xl border-2 border-cyan p-6 md:p-8 bg-white/5 backdrop-blur-md text-white font-rajdhani text-base md:text-lg text-center leading-relaxed">
               <p>{content}</p>

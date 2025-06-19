@@ -3,6 +3,7 @@ import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
+import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) =>
   str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
@@ -21,12 +22,14 @@ function RegulatorySignsPage() {
     "Selective Restriction Signs"
   ];
 
-  // Show nothing until data is ready
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
   }
 
-  // if there's an error, display an error page instead of just the description box
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
