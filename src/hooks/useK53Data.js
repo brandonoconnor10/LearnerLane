@@ -10,14 +10,16 @@ const useK53Data = (section, subsection) => {
     const loadData = async () => {
       try {
         const result = await fetchData('Section', `"${section}"`, 'Subsection', `"${subsection}"`, 100);
-        console.log('Airtable Response:', result);
-        if (isMounted && result.length > 0) {
-          console.log('First record:', result[0]);
-          const content = result[0].fields?.Content || result[0].fields?.content || '';
 
+        if (isMounted && result.length > 0) {
+          const content = result[0].fields?.Content || result[0].fields?.content || '';
           setData({ content, loading: false, error: null });
         } else if (isMounted) {
-          setData({ content: '', loading: false, error: `No data found for Section: ${section}, Subsection: ${subsection}` });
+          setData({
+            content: '',
+            loading: false,
+            error: `No data found for Section: ${section}, Subsection: ${subsection}`,
+          });
         }
       } catch (err) {
         if (isMounted) {
