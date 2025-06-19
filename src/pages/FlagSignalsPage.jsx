@@ -3,8 +3,9 @@ import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
+import PulseLoader from '../components/PulseLoader';
 
-export default function FlagSignalsPage() {
+const FlagSignalsPage = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -12,15 +13,16 @@ export default function FlagSignalsPage() {
   useEffect(() => {
     const loadItems = async () => {
       try {
-        const result = await fetchData(
-          'Section', '"Road Signs"',
-          'Subsection', '"Flag Signals"',
-          100,
-          ['Image', 'Content', 'Type', 'SortOrder']
+        const result = await fetchData('Section',
+            '"Road Signs"',
+            'Subsection',
+            '"Flag Signals"',
+            100,
+            ['Image', 'Content', 'Type', 'SortOrder']
         );
 
         const signs = result
-          .filter(r => r.fields?.Type === 'Sign' && r.fields?.Image && r.fields?.Content)
+          .filter((r) => r.fields?.Type === 'Sign' && r.fields?.Image && r.fields?.Content)
           .map((r, i) => {
             const [rawHeading] = r.fields.Content.split('.');
             return {
@@ -41,7 +43,13 @@ export default function FlagSignalsPage() {
     loadItems();
   }, []);
 
-  if (loading) return null;
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -86,3 +94,5 @@ export default function FlagSignalsPage() {
     </PageLayout>
   );
 }
+
+export default FlagSignalsPage;
