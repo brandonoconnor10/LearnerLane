@@ -28,7 +28,7 @@ const CommandSignQuizPage = () => {
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      setSelectedOption(null); // Reset selection for the next question
+      setSelectedOption(null);
     } else {
       navigate('/regulatory-signs');
     }
@@ -37,39 +37,36 @@ const CommandSignQuizPage = () => {
   return (
     <PageLayout
       subtitle={
-        <h2 className="text-2xl md:text-3xl font-semibold text-cyan font-rajdhani mt-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-cyan font-rajdhani mt-4">
           Command Signs
         </h2>
       }
       contentClassName="justify-start"
     >
-      <VerticalLineContainer className="flex flex-col items-center mt-32 max-h-[70vh] px-8">
-        {/* Question Box */}
-        <div className="relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg w-full max-w-3xl h-[100px] flex items-center justify-center text-center text-xl leading-relaxed font-rajdhani">
+      <VerticalLineContainer className="flex flex-col items-center mt-8 sm:mt-16 px-4 sm:px-8">
+        <div className="relative bg-gray-dark text-white p-4 sm:p-6 border-2 border-cyan rounded-lg w-full max-w-3xl min-h-[80px] sm:h-[100px] flex items-center justify-center text-center text-lg sm:text-xl leading-relaxed font-rajdhani">
           {content || 'No question available.'}
         </div>
 
-        {/* Options Blocks in 2x2 Grid */}
-        <div className="grid grid-cols-2 gap-6 mt-8 w-full max-w-3xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8 w-full max-w-3xl">
           {options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleOptionClick(index)}
-              className={`relative bg-gray-dark text-white p-6 border-2 border-cyan rounded-lg text-left font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[120px] flex items-center ${
+              className={`relative bg-gray-dark text-white p-4 sm:p-6 border-2 border-cyan rounded-lg text-left font-inter hover:bg-cyan-light hover:border-cyan-light transition-colors duration-200 min-h-[100px] sm:min-h-[120px] flex items-center ${
                 selectedOption === index ? (option === answer ? 'bg-green-500' : 'bg-red-500') : ''
               }`}
             >
               <span className="mr-2">{`${String.fromCharCode(97 + index)})`}</span>
-              <span className={`leading-normal ${option.length < 30 ? 'text-lg' : 'text-base'}`}>{option}</span>
+              <span className={`leading-normal ${option.length < 30 ? 'text-base sm:text-lg' : 'text-sm sm:text-base'}`}>{option}</span>
             </button>
           ))}
         </div>
 
-        {/* Next Question or Next Topic Button (Only for Correct Answer) */}
         {selectedOption !== null && options[selectedOption] === answer && (
           <button
             onClick={handleNext}
-            className="mt-12 px-6 py-3 bg-cyan text-white rounded-lg hover:bg-cyan-light transition-colors duration-200 text-lg font-inter"
+            className="mt-6 sm:mt-8 px-4 sm:px-6 py-2 sm:py-3 bg-cyan text-white rounded-lg hover:bg-cyan-light transition-colors duration-200 text-base sm:text-lg font-inter"
           >
             {currentIndex < questions.length - 1 ? 'Next Question' : 'Next Topic'}
           </button>
