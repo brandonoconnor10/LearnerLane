@@ -1,12 +1,12 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-// Removed QuizLink import
 import { useK53Data } from '../hooks/useK53Data';
+import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
-function TrafficSignalsPage() {
+const TrafficSignalsPage = () => {
   const { content, loading, error } = useK53Data("Road Signs", "Traffic Signal");
 
   const sections = [
@@ -17,7 +17,11 @@ function TrafficSignalsPage() {
   ];
 
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
   }
 
   if (error) {
@@ -56,7 +60,6 @@ function TrafficSignalsPage() {
             >
               {section}
             </StyledButton>
-            {/* QuizLink removed */}
           </div>
         ))}
       </VerticalLineContainer>

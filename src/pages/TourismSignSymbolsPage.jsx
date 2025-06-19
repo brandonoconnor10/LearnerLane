@@ -4,8 +4,9 @@ import StyledButton from '../components/StyledButton';
 import { useK53Data } from '../hooks/useK53Data';
 import { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
+import PulseLoader from '../components/PulseLoader';
 
-export default function TourismSignSymbolsPage() {
+const TourismSignSymbolsPage = () => {
   const { content, loading, error } = useK53Data('Road Signs', 'Tourism Sign Symbol');
   const [images, setImages] = useState([]);
 
@@ -16,7 +17,7 @@ export default function TourismSignSymbolsPage() {
           'Section', '"Road Signs"',
           'Subsection', '"Tourism Sign Symbols"',
           100,
-          ['Image', 'Content', 'Type', 'SortOrder'] 
+          ['Image', 'Content', 'Type', 'SortOrder']
         );
 
         const signImages = result
@@ -24,12 +25,10 @@ export default function TourismSignSymbolsPage() {
           .map((record) => ({
             imageUrl: record.fields.Image[0].url,
             title: record.fields.Content || 'Unnamed Sign',
-            sortOrder: record.fields.SortOrder || 0, 
+            sortOrder: record.fields.SortOrder || 0,
           }));
 
-          // Sort images by SortOrder
-          signImages.sort((a, b) => a.sortOrder - b.sortOrder);
-
+        signImages.sort((a, b) => a.sortOrder - b.sortOrder);
         setImages(signImages);
       } catch (err) {
         console.error('Failed to fetch images:', err.message);
@@ -39,12 +38,14 @@ export default function TourismSignSymbolsPage() {
     loadImages();
   }, []);
 
-  // Show nothing until data is ready
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
   }
 
-  // If there's an error, display an error page
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
@@ -72,10 +73,7 @@ export default function TourismSignSymbolsPage() {
       <VerticalLineContainer className="mt-6">
         {images.map((img, index) => (
           <div key={index} className="relative flex flex-col items-center z-10">
-            <StyledButton
-              variant="large"
-              className="my-6"
-            >
+            <StyledButton variant="large" className="my-6">
               <div className="flex items-center">
                 <img
                   src={img.imageUrl}
@@ -101,3 +99,5 @@ export default function TourismSignSymbolsPage() {
     </PageLayout>
   );
 }
+
+export default TourismSignSymbolsPage;
