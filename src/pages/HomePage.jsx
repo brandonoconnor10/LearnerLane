@@ -1,4 +1,3 @@
-// src/pages/HomePage.jsx
 import PageLayout from '../components/PageLayout';
 import Subtitle from '../components/Subtitle';
 import RoadMap from '../components/RoadMap';
