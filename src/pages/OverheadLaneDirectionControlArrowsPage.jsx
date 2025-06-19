@@ -3,8 +3,9 @@ import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
+import PulseLoader from '../components/PulseLoader';
 
-export default function OverheadLaneDirectionControlArrowsPage() {
+const OverheadLaneDirectionControlArrowsPage = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -20,7 +21,7 @@ export default function OverheadLaneDirectionControlArrowsPage() {
         );
 
         const signs = result
-          .filter(r => r.fields?.Type === 'Sign' && r.fields?.Image && r.fields?.Content)
+          .filter((r) => r.fields?.Type === 'Sign' && r.fields?.Image && r.fields?.Content)
           .map((r, i) => {
             const [rawHeading, ...rest] = r.fields.Content.split('.');
             return {
@@ -42,7 +43,13 @@ export default function OverheadLaneDirectionControlArrowsPage() {
     loadItems();
   }, []);
 
-  if (loading) return null;
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -88,3 +95,5 @@ export default function OverheadLaneDirectionControlArrowsPage() {
     </PageLayout>
   );
 }
+
+export default OverheadLaneDirectionControlArrowsPage;
