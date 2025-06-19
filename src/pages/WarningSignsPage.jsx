@@ -1,32 +1,31 @@
-
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
+import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
-
-
-function WarningSignsPage() {
+const WarningSignsPage = () => {
   const { content, loading, error } = useK53Data("Road Signs", "Warning Signs");
 
-
   const sections = [
-   "Road Layout Signs",
-   "Direction of Movement Signs",
-   "Symbolic Signs",
-   "Hazard Marker Signs",
-   "Warning Sign Combinations Signs",
+    "Road Layout Signs",
+    "Direction of Movement Signs",
+    "Symbolic Signs",
+    "Hazard Marker Signs",
+    "Warning Sign Combinations Signs",
   ];
 
-  // Show nothing until data is ready
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
   }
 
-  // if there's an error, display an error page instead of just the description box
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
@@ -35,11 +34,10 @@ function WarningSignsPage() {
     );
   }
 
-
   return (
     <PageLayout
       subtitle={
-         <>
+        <>
           <h2 className="text-2xl md:text-3xl font-semibold text-cyan font-rajdhani mt-4">
             Warning Signs
           </h2>
@@ -70,6 +68,6 @@ function WarningSignsPage() {
       </VerticalLineContainer>
     </PageLayout>
   );
-}
+};
 
 export default WarningSignsPage;
