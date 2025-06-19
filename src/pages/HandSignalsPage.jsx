@@ -3,8 +3,9 @@ import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
 import { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
+import PulseLoader from '../components/PulseLoader';
 
-export default function HandSignalsPage() {
+const HandSignalsPage = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -20,7 +21,7 @@ export default function HandSignalsPage() {
         );
 
         const signs = result
-          .filter(r => r.fields?.Type === 'Sign' && r.fields?.Image && r.fields?.Content)
+          .filter((r) => r.fields?.Type === 'Sign' && r.fields?.Image && r.fields?.Content)
           .map((r, i) => {
             const [rawHeading] = r.fields.Content.split('.');
             return {
@@ -41,7 +42,13 @@ export default function HandSignalsPage() {
     loadItems();
   }, []);
 
-  if (loading) return null;
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -86,3 +93,5 @@ export default function HandSignalsPage() {
     </PageLayout>
   );
 }
+
+export default HandSignalsPage;
