@@ -4,9 +4,10 @@ import StyledButton from '../components/StyledButton';
 import { useK53Data } from '../hooks/useK53Data';
 import { useState, useEffect } from 'react';
 import { fetchData } from '../data/fetchData';
+import PulseLoader from '../components/PulseLoader';
 
-export default function DirectionOfMovementSignsPage() {
-  const { content, loading, error } = useK53Data('Road Signs', 'Direction of Movement Signs');
+const DirectionOfMovementSignsPage = () => {
+  const { content, loading, error } = useK53Data('Road Signs', 'Direction of Movement Sign');
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function DirectionOfMovementSignsPage() {
           'Section', '"Road Signs"',
           'Subsection', '"Direction of Movement Signs"',
           100,
-          ['Image', 'Content', 'Type', 'SortOrder'] 
+          ['Image', 'Content', 'Type', 'SortOrder']
         );
 
         const signImages = result
@@ -24,11 +25,11 @@ export default function DirectionOfMovementSignsPage() {
           .map((record) => ({
             imageUrl: record.fields.Image[0].url,
             title: record.fields.Content || 'Unnamed Sign',
-            sortOrder: record.fields.SortOrder || 0, 
+            sortOrder: record.fields.SortOrder || 0,
           }));
 
-          // Sort images by SortOrder
-          signImages.sort((a, b) => a.sortOrder - b.sortOrder);
+        // Sort images by SortOrder
+        signImages.sort((a, b) => a.sortOrder - b.sortOrder);
 
         setImages(signImages);
       } catch (err) {
@@ -39,9 +40,12 @@ export default function DirectionOfMovementSignsPage() {
     loadImages();
   }, []);
 
-  // Show nothing until data is ready
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
+        <PulseLoader />
+      </div>
+    );
   }
 
   // If there's an error, display an error page
@@ -101,3 +105,5 @@ export default function DirectionOfMovementSignsPage() {
     </PageLayout>
   );
 }
+
+export default DirectionOfMovementSignsPage;
