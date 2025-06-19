@@ -1,7 +1,6 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
 import PulseLoader from '../components/PulseLoader';
 
@@ -9,17 +8,17 @@ const slugify = (str) =>
   str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
 function RegulatorySignsPage() {
-  const { content, loading, error } = useK53Data("Road Signs", "Regulatory Signs");
+  const { content, loading, error } = useK53Data('Road Signs', 'Regulatory Signs');
 
   const sections = [
-    "Control Signs",
-    "Command Signs",
-    "Prohibition Signs",
-    "Reservation Signs",
-    "Comprehension Signs",
-    "De-restriction Signs",
-    "Exclusive Secondary Signs",
-    "Selective Restriction Signs"
+    'Control Signs',
+    'Command Signs',
+    'Prohibition Signs',
+    'Reservation Signs',
+    'Comprehension Signs',
+    'De-restriction Signs',
+    'Exclusive Secondary Signs',
+    'Selective Restriction Signs',
   ];
 
   if (loading) {
@@ -66,7 +65,6 @@ function RegulatorySignsPage() {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>

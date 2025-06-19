@@ -1,27 +1,26 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
 import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
 function TemporarySignsPage() {
-  const { content, loading, error } = useK53Data("Road Signs", "Temporary Sign");
+  const { content, loading, error } = useK53Data('Road Signs', 'Temporary Sign');
 
   const sections = [
-    "Temporary Control Signs",
-    "Temporary Command Signs",
-    "Temporary Prohibition Signs",
-    "Temporary Reservation Signs",
-    "Temporary Road Layout Signs",
-    "Temporary Direction of Movement Signs",
-    "Temporary Symbolic Signs",
-    "Temporary Hazard Marker Signs",
-    "Temporary Guidance Signs",
-    "Temporary Information Signs",
-    "Temporary Sign Combinations",
+    'Temporary Control Signs',
+    'Temporary Command Signs',
+    'Temporary Prohibition Signs',
+    'Temporary Reservation Signs',
+    'Temporary Road Layout Signs',
+    'Temporary Direction of Movement Signs',
+    'Temporary Symbolic Signs',
+    'Temporary Hazard Marker Signs',
+    'Temporary Guidance Signs',
+    'Temporary Information Signs',
+    'Temporary Sign Combinations',
   ];
 
   if (loading) {
@@ -67,7 +66,6 @@ function TemporarySignsPage() {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>

@@ -1,12 +1,9 @@
-
+import React from 'react';
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
-
-
 
 function IntroductionPage() {
   const sections = [
@@ -37,7 +34,6 @@ function IntroductionPage() {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>

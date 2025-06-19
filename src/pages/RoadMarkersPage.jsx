@@ -1,16 +1,15 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
 import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
 function RoadMarkersPage() {
-  const { content, loading, error } = useK53Data("Road Signs", "Road Marker");
+  const { content, loading, error } = useK53Data('Road Signs', 'Road Marker');
 
-  const sections = ["Road Markers"];
+  const sections = ['Road Markers'];
 
   if (loading) {
     return (
@@ -55,7 +54,6 @@ function RoadMarkersPage() {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>

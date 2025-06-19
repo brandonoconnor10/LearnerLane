@@ -1,59 +1,58 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
 
 const slugify = (str) =>
   str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
 function RulesOfTheRoadMapPage() {
-  const { content, loading, error } = useK53Data("Rules Of The Road", "Rule Of The Road");
+  const { content, loading, error } = useK53Data('Rules Of The Road', 'Rule Of The Road');
 
   const sections = [
-    "General Rules",
-    "Driving on a divided road",
-    "Driving on the shoulder of the road",
-    "Parking",
-    "Overtaking or passing another vehicle",
-    "Being Overtaken",
-    "Cross or entering a public road or traffic lane",
-    "Indicating",
-    "Turning Left",
-    "Turning Right",
-    "Minitraffic circles and Roundabouts",
-    "Stopping your vehicle",
-    "Compulsory Stops",
-    "General Duties of drivers and passengers",
-    "Duties relating to motorcycles",
-    "Vehicles causing excessive noise",
-    "Pedestrian crossing",
-    "Racing and sport on public roads",
-    "Hindering or obstructing traffic on a public road",
-    "Abandoned vehicles on public roads",
-    "Damage to public roads",
-    "Freeways",
-    "Not allowed on Freeways",
-    "Freeway Allowed Stops",
-    "Towing",
-    "Speed Limits",
-    "Seat Limits",
-    "Tyres",
-    "Lights",
-    "Vehicle Accidents",
-    "Important Rules",
-    "Alcohol and narcotic drugs",
-    "Triangles",
-    "Carrying Passengers",
-    "Animals on public roads",
-    "Carrying a load",
-    "Safety Markings",
-    "Reversing",
-    "Defensive Driving",
-    "4 Steps of Defensive Driving",
-    "The Process of defensive driving",
-    "Actions Grouped",
-    "Variations",
+    'General Rules',
+    'Driving on a divided road',
+    'Driving on the shoulder of the road',
+    'Parking',
+    'Overtaking or passing another vehicle',
+    'Being Overtaken',
+    'Cross or entering a public road or traffic lane',
+    'Indicating',
+    'Turning Left',
+    'Turning Right',
+    'Minitraffic circles and Roundabouts',
+    'Stopping your vehicle',
+    'Compulsory Stops',
+    'General Duties of drivers and passengers',
+    'Duties relating to motorcycles',
+    'Vehicles causing excessive noise',
+    'Pedestrian crossing',
+    'Racing and sport on public roads',
+    'Hindering or obstructing traffic on a public road',
+    'Abandoned vehicles on public roads',
+    'Damage to public roads',
+    'Freeways',
+    'Not allowed on Freeways',
+    'Freeway Allowed Stops',
+    'Towing',
+    'Speed Limits',
+    'Seat Limits',
+    'Tyres',
+    'Lights',
+    'Vehicle Accidents',
+    'Important Rules',
+    'Alcohol and narcotic drugs',
+    'Triangles',
+    'Carrying Passengers',
+    'Animals on public roads',
+    'Carrying a load',
+    'Safety Markings',
+    'Reversing',
+    'Defensive Driving',
+    '4 Steps of Defensive Driving',
+    'The Process of defensive driving',
+    'Actions Grouped',
+    'Variations',
   ];
 
   if (loading) return null;
@@ -94,7 +93,6 @@ function RulesOfTheRoadMapPage() {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>

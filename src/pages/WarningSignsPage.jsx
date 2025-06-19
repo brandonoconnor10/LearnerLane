@@ -1,21 +1,20 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
 import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
 const WarningSignsPage = () => {
-  const { content, loading, error } = useK53Data("Road Signs", "Warning Signs");
+  const { content, loading, error } = useK53Data('Road Signs', 'Warning Signs');
 
   const sections = [
-    "Road Layout Signs",
-    "Direction of Movement Signs",
-    "Symbolic Signs",
-    "Hazard Marker Signs",
-    "Warning Sign Combinations Signs",
+    'Road Layout Signs',
+    'Direction of Movement Signs',
+    'Symbolic Signs',
+    'Hazard Marker Signs',
+    'Warning Sign Combinations Signs',
   ];
 
   if (loading) {
@@ -62,7 +61,6 @@ const WarningSignsPage = () => {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>

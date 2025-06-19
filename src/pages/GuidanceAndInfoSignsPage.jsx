@@ -1,25 +1,24 @@
 import PageLayout from '../components/PageLayout';
 import VerticalLineContainer from '../components/VerticalLineContainer';
 import StyledButton from '../components/StyledButton';
-import QuizLink from '../components/QuizLink';
 import { useK53Data } from '../hooks/useK53Data';
 import PulseLoader from '../components/PulseLoader';
 
 const slugify = (str) => str.toLowerCase().replace(/['"]/g, '').replace(/\s+/g, '-');
 
 function GuidanceAndInfoSignsPage() {
-  const { content, loading, error } = useK53Data("Road Signs", "Guidance and Information Signs");
+  const { content, loading, error } = useK53Data('Road Signs', 'Guidance and Information Signs');
 
   const sections = [
-    "Location Sign Symbols",
-    "Direction Sign Symbols",
-    "Diagrammatic Sign Symbols",
-    "Location Signs",
-    "Route Marker Signs",
-    "Direction Signs",
-    "Freeway Direction Signs",
-    "Tourism Sign Symbols",
-    "Information Signs",
+    'Location Sign Symbols',
+    'Direction Sign Symbols',
+    'Diagrammatic Sign Symbols',
+    'Location Signs',
+    'Route Marker Signs',
+    'Direction Signs',
+    'Freeway Direction Signs',
+    'Tourism Sign Symbols',
+    'Information Signs',
   ];
 
   if (loading) {
@@ -30,7 +29,6 @@ function GuidanceAndInfoSignsPage() {
     );
   }
 
-  // if there's an error, display an error page instead of just the description box
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-navy-dark text-white font-rajdhani">
@@ -67,7 +65,6 @@ function GuidanceAndInfoSignsPage() {
             >
               {section}
             </StyledButton>
-            <QuizLink section={section} index={index} />
           </div>
         ))}
       </VerticalLineContainer>
