@@ -1,0 +1,11 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+[functions]
+node_bundler = "esbuild"
+
+[template.environment]
+VITE_AIRTABLE_API_KEY = ""
+VITE_AIRTABLE_BASE_ID = ""
+
