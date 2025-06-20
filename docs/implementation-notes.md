@@ -12,4 +12,10 @@
     11. Retrieved Airtable API key and base ID, stored in .env file
     12. Set up fetchData js to fetch our Airtable data 
     13. Implement React Router 
-    14.
+    14. Created Hooks to fetch description and quiz data from Airtable 
+    15. Created each page before extracting them into separate components and then using that as a blueprint for other pages.
+    16. Created all the sign pages and sign quiz pages.
+    17. Styled the pages using tailwind css.
+    18. Tested and fixed for mobile view.
+    19. Cleaned up each page to have consistent code and removed console logs 
+    20. Added favicon and updated Readme file 
