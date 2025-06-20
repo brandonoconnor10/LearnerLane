@@ -1,6 +1,6 @@
 import PageLayout from '../components/PageLayout';
 import Subtitle from '../components/Subtitle';
-import RoadMap from '../components/RoadMap';
+import RoadMap from '../components/RoadMap.jsx';
 
 const HomePage = () => {
   return (
