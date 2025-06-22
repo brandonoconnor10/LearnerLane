@@ -18,4 +18,5 @@
     17. Styled the pages using tailwind css.
     18. Tested and fixed for mobile view.
     19. Cleaned up each page to have consistent code and removed console logs 
-    20. Added favicon and updated Readme file 
+    20. Added favicon 
+    21. Set Up for netlify hosting 
