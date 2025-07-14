@@ -76,6 +76,7 @@ To run this project locally, follow these steps:
 
 This will open the app at http://localhost:5173.
 
+If you want to see the finished project, visit this link: https://learnerlane.netlify.app/
 ---
 
 Created by Brandon-Lee O'Connor
